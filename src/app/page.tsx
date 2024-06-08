@@ -10,7 +10,7 @@ const featuredProjects = [
   {
     title: "akhileshw.dev",
     description: "Personal site built with nextjs",
-    repo: "https://github.com/akhilesh-w/akhileshw.dev",
+    repo: "https://github.com/akhilesh-w/akhileshw.xyz",
   },
   {
     title: "dotfiles",

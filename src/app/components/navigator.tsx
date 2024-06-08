@@ -7,7 +7,7 @@ const NavigatorItem = ({ label, href }: { label: string; href: string }) => (
 )
 
 const Navigator = () => (
-  <header className="flex justify-between">
+  <header className="flex justify-between pt-4">
     <div className='flex pb-8'>
       <h1 className="text-neutral-400 pr-2">
         akhilesh

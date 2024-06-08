@@ -18,8 +18,8 @@ export default function About() {
     <div>
       <h1 className="leading-tight tracking-tighter text-4xl sm:text-5xl">Hi!</h1>
       <div className="pt-4">
-        <p>This is Akhilesh. I grew up in a small town in Maharashtra, India and studied in Hyderabad, India.</p>
-        <p>I'm a Graduate in Computer Applications but the status quo is that I still suck at coding.</p>
+        <p>This is Akhilesh. I grew up in a small town in Maharashtra and studied in Hyderabad, Telangana.</p>
+        <p>I'm a Graduate in Computer Applications from Osmania University, Hyderabad.</p>
         <p>To other humans, I speak Marathi, Hindi and English. To silicon, I speak C, Python, JavaScript and a little bit of Rust.</p>
       </div>
 
@@ -28,7 +28,7 @@ export default function About() {
       <SubHeading>Music</SubHeading>
       <Description>I love listening to <a href="https://open.spotify.com/user/31knvgklastaewzgvec6s67stw74?si=64401350b4a542ad">new and interesting music</a>  and I curate many playlists of the music I like</Description>
 
-      <SubHeading>Photographs</SubHeading>
+      <SubHeading>Photography</SubHeading>
       <Description>I love taking Photographs and collecting beautiful pictures.</Description>
 
       <SubHeading>Linux</SubHeading>
