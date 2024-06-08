@@ -49,12 +49,6 @@ export default function About() {
       <SubHeading>Better Future</SubHeading>
       <Description>I am excited for the incredible future we can have if we work towards it. More rights to people, no more oppressive regimes, no more centralized platforms, better privacy for all.</Description>
 
-      <p>I think I could've just done this with simple paragraph tags</p>
-      <p>nvm thought, it worked out well for now</p>
-      <p>Music: also paragraph tags would've needed styling too</p>
-
-
-
       <div>
         <SubHeading>Connect</SubHeading>
         <Description>
