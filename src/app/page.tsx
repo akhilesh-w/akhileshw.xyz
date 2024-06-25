@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import MainLayout from "./components/main-layout";
 import { Photo } from "./components/photo";
 import me from "../../public/me.jpg";
@@ -8,7 +7,7 @@ export const metadata: Metadata = {}
 
 const featuredProjects = [
   {
-    title: "akhileshw.dev",
+    title: "akhileshw.xyz",
     description: "Personal site built with nextjs",
     repo: "https://github.com/akhilesh-w/akhileshw.xyz",
   },
@@ -17,6 +16,11 @@ const featuredProjects = [
     description: "dotfiles for my Arch setup",
     repo: "https://github.com/akhilesh-w/dotfiles",
   },
+  {
+    title: "log",
+    description: "canvas for your thoughts",
+    repo: "https://log.akhileshw.xyz",
+  }
 ]
 
 export default function Home() {
@@ -36,7 +40,7 @@ export default function Home() {
           <div key={index}>
             <a
               href={project.repo}
-              className="underline decoration-neutral-600 underline-offset-4 transition-colors focus:decoration-neutral-500 focus:outline-offset-4 hover:decoration-neutral-500" rel="noopener noreferrer">
+              className="underline decoration-neutral-600 underline-offset-4 transition-colors focus:decoration-neutral-500 focus:outline-offset-4 hover:decoration-neutral-500" target="_blank" rel="noopener noreferrer">
               {project.title}
             </a>
             <p className="mt-1 opacity-60">{project.description}</p>

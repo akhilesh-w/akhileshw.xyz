@@ -7,7 +7,7 @@ export const Photo = ({ src }: { src: StaticImageData }) => {
       priority
       src={src}
       sizes='(max-width: 768px) 213px, 33vw'
-      alt='miyamura, but this is what I use as my pfp'
+      alt='a picture of me on a terrace in Hyderabad, India'
       placeholder='blur'
     />
   )

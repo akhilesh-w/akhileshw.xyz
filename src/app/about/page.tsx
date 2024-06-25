@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import React, { Children } from "react";
-import linker from "../components/linker";
 
 export const metadata: Metadata = {}
 
