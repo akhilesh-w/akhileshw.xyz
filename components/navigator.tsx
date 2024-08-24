@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import linker from './linker';
 
 const NavigatorItem = ({ label, href }: { label: string; href: string }) => (
   <Link href={href} as={href} className={`text-sm sm:text-base tracking-tight text-neutral-400 hover:underline hover:underline-offset-4 hover:transition-transform`}>
@@ -22,10 +23,11 @@ const Navigator = () => (
     <nav className='flex w-full gap-4 pb-8 justify-end'>
       <NavigatorItem label='home' href='/' />
       <NavigatorItem label='about' href='/about' />
-      {/* <NavigatorItem label='posts' href='/posts' /> */}
-      <NavigatorItem label='resume' href='/resume.pdf' />
+      <NavigatorItem label='posts' href='/blog' />
+      {/* <NavigatorItem label='resume' href='/resume.pdf' /> */}
       {/* <NavigatorItem label='uses' href='/uses' /> */}
-      <NavigatorItem label='now' href='/now' />
+      {/* <NavigatorItem label='now' href='/now' /> */}
+      <NavigatorItem label='nav' href='/nav' />
     </nav>
   </header>
 )

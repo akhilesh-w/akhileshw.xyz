@@ -1,7 +1,17 @@
+import MainLayout from "../../../components/main-layout"
+
 export default function Pictures() {
   return (
-    <div>
-      <h1 className="leading-tight tracking-tighter text-4xl sm:text-5xl">pictures</h1>
-    </div>
+    <MainLayout>
+      <header>
+        <div>
+          <h1 className="leading-tight tracking-tighter text-4xl sm:text-5xl mb-6">pictures</h1>
+        </div>
+      </header>
+
+      <main>
+
+      </main>
+    </MainLayout>
   )
 }
