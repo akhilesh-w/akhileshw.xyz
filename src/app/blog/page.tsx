@@ -13,7 +13,7 @@ export default async function BlogIndex() {
         </h1>
       </header>
       <main>
-        <ul className="pt-4 pb-4">
+        <ul className="space-y-4">
           {posts.map((post) => (
             <li key={post.slug} className="flex justify-between items-center">
               <Link href={`/blog/${post.slug}`} className="text-lg hover:underline" >{post.frontmatter.title}</Link>

@@ -29,6 +29,10 @@ const featuredProjects = [
 export default async function Home() {
   const posts = await getAllPosts();
 
+  // const sortedPosts = posts.sort((a, b) =>
+  //   new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
+  // );
+
   return (
     <MainLayout>
       <div className="mb-6">
@@ -62,11 +66,12 @@ export default async function Home() {
       <section className="mb-10">
         <h2 className="text-xl font-semibold mb-4">Recent Posts</h2>
 
+
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
           {posts.slice(0, 3).map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} className="underline decoration-neutral-600 underline-offset-4 transition-colors focus:decoration-neutral-500 focus:outline-offset-4 hover:decoration-neutral-500">
               <h3>{post.frontmatter.title}</h3>
-              <p className="mt-1 opacity-60">{post.frontmatter.date}</p>
+              <p className="mt-1 opacity-60 text-sm">{post.frontmatter.date}</p>
             </Link>
           ))}
         </div>

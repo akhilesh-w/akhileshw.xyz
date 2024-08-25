@@ -20,7 +20,7 @@ export default function BlogLayout({ children, frontmatter }: BlogLayoutProps) {
             By {frontmatter.author} on {frontmatter.date}
           </div>
         </header>
-        <div className="prose lg:prose-xl max-w-none space-y-6 leading-relaxed">
+        <div className="prose lg:prose-xl max-w-none space-y-6 leading-relaxed prose-links">
           {children}
         </div>
       </article>

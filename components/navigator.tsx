@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import linker from './linker';
 
 const NavigatorItem = ({ label, href }: { label: string; href: string }) => (
   <Link href={href} as={href} className={`text-sm sm:text-base tracking-tight text-neutral-400 hover:underline hover:underline-offset-4 hover:transition-transform`}>

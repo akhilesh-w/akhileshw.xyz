@@ -1,4 +1,5 @@
 import Clock from "./clock"
+import { ThemeToggle } from "./ThemeToggle"
 
 const Footer = () => (
   <footer className='flex flex-col-reverse sm:flex-row items-center justify-between py-4'>
@@ -18,6 +19,7 @@ const Footer = () => (
       <a title='source code' href='https://github.com/akhilesh-w/akhileshw.xyz'>
         Source
       </a>
+      <ThemeToggle />
     </div>
   </footer>
 )
