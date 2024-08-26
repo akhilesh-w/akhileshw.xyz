@@ -1,5 +1,7 @@
-import Clock from "./clock"
+import dynamic from "next/dynamic"
 import { ThemeToggle } from "./ThemeToggle"
+
+const Clock = dynamic(() => import('./clock'), { ssr: false })
 
 const Footer = () => (
   <footer className='flex flex-col-reverse sm:flex-row items-center justify-between py-4'>
