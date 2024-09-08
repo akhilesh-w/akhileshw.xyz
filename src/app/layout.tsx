@@ -43,15 +43,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Providers>
-        <body className={`${inter.className} min-h-screen transition-colors duration-300`}>
+      <body className={`${inter.className} min-h-screen transition-colors duration-300`}>
+        <Providers>
           <div className="bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen">
             {children}
           </div>
           <SpeedInsights />
           <Analytics />
-        </body>
-      </Providers>
+        </Providers>
+      </body>
     </html >
   );
 }

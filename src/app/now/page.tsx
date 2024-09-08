@@ -4,14 +4,6 @@ import MainLayout from "../../../components/main-layout";
 
 export const metadata: Metadata = {};
 
-const T1 = ({ children }: { children: React.ReactNode }) => (
-  <h3 className="mb-2 mt-2">{children}</h3>
-);
-
-const T2 = ({ children }: { children: React.ReactNode }) => (
-  <p className="mb-2 mt-2 pl-4">{children}</p>
-);
-
 export default function Now() {
   return (
     <MainLayout>
