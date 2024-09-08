@@ -6,7 +6,7 @@ export async function GET() {
   console.log('Fetching posts...')
   const posts = await getAllPosts()
   console.log('Posts fetched:', posts.length)
-  const siteURL = 'localhost:3000'
+  const siteURL = 'https://akhileshw.xyz/'
   const author = {
     name: 'Akhilesh Waghmare',
     email: 'hey@akhileshw.xyz',
