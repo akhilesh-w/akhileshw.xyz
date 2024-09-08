@@ -1,8 +1,6 @@
 "use client";
 import MainLayout from "../../../components/main-layout";
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { pinata } from "../../utils/config"
 
 export default function Pictures() {
 
@@ -16,9 +14,9 @@ export default function Pictures() {
         </div>
       </header>
 
-        <main>
+      <main>
 
-        </main>
+      </main>
     </MainLayout>
   );
 }
