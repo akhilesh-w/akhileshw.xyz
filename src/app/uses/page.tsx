@@ -16,7 +16,7 @@ export default function Uses() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">Hardware</h2>
           <ul className="space-y-4 leading-relaxed">
-            <li><strong>Laptop:</strong> Lenovo IdeaPad Gaming 3. With 40gb RAM <em>(I added a 32gb RAM stick)</em>, it's an odd combination but it's a good computer and works great for me. It runs Arch.</li>
+            <li><strong>Laptop:</strong> Lenovo IdeaPad Gaming 3, It runs Arch.</li>
             <li><strong>Old Laptop:</strong> ThinkPad T440s (Old laptop which just sits in my closet now). I got this second hand when I was in first year of college when I was obssesed with Thinkpads (I still am). It runs ubuntu.</li>
             <li><strong>Monitor:</strong> {linker({ linktext: 'LG 32" 4k.', href: "https://amzn.to/3z0gjr1" })}  I've searched a lot for a good monitor before landing on this one. Monitors are almost universally bad and the ones that are not bad are just expensive, this one is really good for the price. </li>
             <li><strong>Phone:</strong> I use pocofone with LineageOS, it's old now but sadly I can't find a worthy replacement.</li>
