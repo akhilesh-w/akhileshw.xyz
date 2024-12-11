@@ -85,7 +85,7 @@ export default async function Home() {
       <section>
         <h2 className="text-xl font-semibold mb-4">Links</h2>
         <div className="flex flex-wrap gap-2">
-          {linker({ linktext: "Twitter", href: "https://twitter.com/the_akhilesh_w" })}
+          {linker({ linktext: "Twitter", href: "https://twitter.com/theakhileshw" })}
           {linker({ linktext: "LinkedIn", href: "https://www.linkedin.com/in/akhilesh-w/" })}
           {linker({ linktext: "Github", href: "https://github.com/akhilesh-w" })}
           {linker({ linktext: "Mastodon", href: "https://universeodon.com/@akhileshw" })}

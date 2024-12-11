@@ -48,7 +48,7 @@ export default function About() {
           <div>
             Find me on these sites:{" "}
 
-            {linker({ linktext: "Twitter", href: "https://twitter.com/the_akhilesh_w" })}
+            {linker({ linktext: "Twitter", href: "https://twitter.com/theakhileshw" })}
             {", "}
             {linker({ linktext: "LinkedIn", href: "https://www.linkedin.com/in/akhilesh-w/" })}
             {", "}
