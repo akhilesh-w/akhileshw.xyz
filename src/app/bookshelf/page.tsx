@@ -4,7 +4,7 @@ import MainLayout from "../../../components/main-layout";
 
 export const metadata: Metadata = {}
 
-export default function about() {
+export default function Bookshelf() {
   return (
     <MainLayout>
       <header>

@@ -26,6 +26,7 @@ export default function Nav() {
           <NavigatorItem label="/Now" href="/now" />
           <NavigatorItem label="/Uses" href="/uses" />
           <NavigatorItem label="/Pictures" href="/pictures" />
+          <NavigatorItem label="/Bookshelf" href="/bookshelf" />
           <NavigatorItem label="/Reading" href="/reading" />
           <NavigatorItem label="/Donate" href="/donate" />
 
