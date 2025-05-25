@@ -23,6 +23,11 @@ const featuredProjects = [
     title: "log",
     description: "canvas for your thoughts",
     repo: "https://log.akhileshw.xyz",
+  },
+  {
+    title: "sites",
+    description: "random sites I've built & some thoughts",
+    repo: "https://sites.akhileshw.xyz",
   }
 ]
 
@@ -41,13 +46,14 @@ export default async function Home() {
 
       <section className="mb-10 space-y-4 leading-relaxed">
         <p>Hi there, I'm <strong>Akhilesh</strong> aka <strong>dopamine</strong>, a software developer from India. I'm passionate about the internet and love creating things for the web.</p>
+        <p>I see myself as a generalist, always learning and evolving on my journey to becoming a polymath.</p>
         <p>I'm also pretty active in the web3 and blockchain space. Always open to talk about it.</p>
         <p>Take a look at what I'm up to{' '} <Link href="/now" className="tracking-tight underline hover:underline-offset-4 hover:transition-transform">nowdays</Link></p>
       </section>
 
       {/* Projects */}
       <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4">Projects</h2>
+        <h2 className="text-xl font-semibold mb-4">Random stuff I cooked</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {featuredProjects?.map((project, index) =>
             <div key={index}>

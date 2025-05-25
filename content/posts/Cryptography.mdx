@@ -1,0 +1,80 @@
+---
+title: "Cryptography"
+date: "Feb 1, 2025"
+author: "Akhilesh"
+---
+
+# Understanding Cryptography: The Backbone of Secure Communication
+
+In today's digital world, where data security is of paramount importance, cryptography plays a crucial role in ensuring secure communication and data protection. Whether you're sending a quick message or making a bank transfer, cryptographic algorithms are working behind the scenes to keep your data safe. This article delves into its fundamentals, types, and applications.
+
+## What is Cryptography?
+
+Cryptography is the process of securing information by transforming readable information (plain text) into random gibberish (ciphertext) that only the right person can decode. It uses mathematical algorithms and computational techniques to encode messages, making them unreadable to people other than the sender and receiver.
+
+### The Building Blocks: Encryption and Decryption
+
+Think of encryption as putting your message in an unbreakable locker. The key to this locker is what we call a cryptographic key - a set of mathematical values that both sender and receiver need to agree on beforehand. These keys are of two types:
+
+- **Public keys**: This is the key that you share with everyone. Think of this as your digital address that anyone can see and send messages to but only you have the key to access the messages.
+- **Private keys**: Only you have access to this key.
+
+## Why Cryptography Matters: Key Objectives
+
+- **Confidentiality**: Ensuring your messages stay between you and your intended recipient
+- **Integrity**: Making sure that the data has not been altered or tampered with during transit
+- **Authentication**: Ensures that information is shared between the correct sender and receiver by verifying their identities during transmission.
+- **Non-repudiation**: Once information is shared, the sender cannot deny sending it, and the receiver cannot deny receiving it.
+
+## Types of Cryptography
+
+Cryptography can be broadly classified into the following types:
+
+### 1. Symmetric Key Cryptography
+
+In symmetric key cryptography, the same key is used for encryption and decryption. Imagine having a single key that locks and unlocks the locker, then you'll need a secure channel to share the key to the receiver.
+
+Examples Algorithms:
+- Advanced Encryption Standard (AES)
+- Data Encryption Standard (DES)
+- Blowfish
+
+### 2. Asymmetric Key Cryptography
+
+In asymmetric key cryptography, instead of one key, we have a pair of keys - a public key for encryption and a private key for decryption. It's like having a mailbox where anyone can put mails but only you can read them.
+
+Example Algorithms:
+- RSA (Rivest-Shamir-Adleman)
+- ECC (Elliptic Curve Cryptography)
+- Diffie-Hellman Key Exchange
+
+### 3. Hash Functions
+
+Hash functions convert input data into a hash value of fixed length. No matter how many times you hash the input, you'll get the same output, but you cannot reverse the process. Common algorithms for hashing are:
+- SHA256
+- MD5
+- BLAKE2
+
+## Real-World Applications
+
+### 1. Secure Communication
+Cryptography is used to secure communication over public networks like the Internet, making it difficult for unauthorized individuals to access or intercept sensitive information. Data Encryption (End-to-End encryption) is also used in apps like Signal, WhatsApp, and Telegram to make sure that no one else reads those messages other than the sender and the receiver.
+
+### 2. Blockchain and Cryptocurrencies
+The entire cryptocurrency ecosystem relies on cryptographic principles to secure transactions and maintain the blockchain.
+
+### 3. Secure Authentication
+Cryptography is used to secure online transactions, including online banking, e-commerce, and electronic voting. Multi-factor authentication (MFA) combines multiple modes of verification, such as passwords, biometric scans, or OTPs/TOTPs, making unauthorized access significantly more difficult.
+
+### 4. Digital Signatures (PKI)
+Public-key Infrastructure (PKI) is a system where you share your public key with everyone, and then sign your documents with the private key. Anyone with your public key can now verify that this document was indeed signed by you and has not been tampered with. If you have ever used Keybase then you already know about this.
+
+### 5. Password Protection
+Cryptography is used to store passwords securely. When you sign up for an app, they don't store the password - they store a hash of it, making it much harder for attackers to steal.
+
+### 6. Data Protection in Cloud Computing
+Cloud storage services use encryption to keep your data safe. Even if hackers get their hands on your files, they won't be able to read the data without the decryption key.
+
+## Conclusion
+
+As we build more of our lives around digital systems, cryptography's importance only grows. While its traditional role in security remains crucial, we're seeing exciting new applications in blockchain and decentralized systems. These technologies use cryptographic primitives in creative ways to build trustless systems - though remember, we're not eliminating trust entirely, just shifting it from human intermediaries to mathematical protocols.
