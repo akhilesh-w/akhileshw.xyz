@@ -32,7 +32,7 @@ export default function About() {
 
             <li><strong>Movies: </strong>I like watching movies, <em>especially sci-fi</em>. Interstellar, The Social Network and Whiplash are some of my favourite movies.</li>
 
-            <li><strong>Self hosting: </strong>I don't really feel confortable having my data on the clouds of these big corps, I know it's secure and I'm just being paranoid, but I prefer the peace of mind that comes with keeping my data stored locally on my own devices.</li>
+            <li><strong>Self hosting: </strong>I'm not confortable having my data on the cloud. I prefer the peace of mind that comes with keeping my data stored locally on my own devices.</li>
 
             <li><strong>Writing: </strong>I sometimes write, I'm not at all consistent but I do write. Check out my <a href="https://akhileshw.substack.com/">Substack</a> and <a href="https://medium.com/@akhileshw">Medium</a></li>
 

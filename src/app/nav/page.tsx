@@ -21,11 +21,11 @@ export default function Nav() {
 
       <main>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <NavigatorItem label="/About" href="/about" />
+          {/* <NavigatorItem label="/About" href="/about" /> */}
           {/* <NavigatorItem label="/Resume" href="/resume.pdf" /> */}
           <NavigatorItem label="/Now" href="/now" />
           <NavigatorItem label="/Uses" href="/uses" />
-          <NavigatorItem label="/Pictures" href="/pictures" />
+          {/* <NavigatorItem label="/Pictures" href="/pictures" /> */}
           <NavigatorItem label="/Bookshelf" href="/bookshelf" />
           <NavigatorItem label="/Reading" href="/reading" />
           <NavigatorItem label="/Donate" href="/donate" />

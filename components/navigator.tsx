@@ -9,9 +9,11 @@ const NavigatorItem = ({ label, href }: { label: string; href: string }) => (
 const Navigator = () => (
   <header className="flex justify-between pt-4">
     <div className='flex pb-8'>
-      <h1 className="text-neutral-400 pr-2">
-        akhilesh
-      </h1>
+      <Link href="/" as="/" className="text-neutral-400 pr-2">
+        <h1>
+          akhilesh
+        </h1>
+      </Link>
       {/* TODO: If looking for new job, then enable */}
       {/* <div className='flex w-max items-center border px-2 rounded-full'>
         <div className='rounded-full bg-green-400 h-2 w-2' />
@@ -20,13 +22,13 @@ const Navigator = () => (
     </div>
 
     <nav className='flex w-full gap-4 pb-8 justify-end'>
-      <NavigatorItem label='home' href='/' />
+      {/* <NavigatorItem label='home' href='/' /> */}
       <NavigatorItem label='about' href='/about' />
       <NavigatorItem label='posts' href='/blog' />
       {/* <NavigatorItem label='resume' href='/resume.pdf' /> */}
-      {/* <NavigatorItem label='uses' href='/uses' /> */}
-      {/* <NavigatorItem label='now' href='/now' /> */}
-      <NavigatorItem label='nav' href='/nav' />
+      <NavigatorItem label='uses' href='/uses' />
+      <NavigatorItem label='now' href='/now' />
+      {/* <NavigatorItem label='nav' href='/nav' /> */}
     </nav>
   </header>
 )

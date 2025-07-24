@@ -23,7 +23,7 @@
     "fs": "^0.0.1-security",
     "fs-extra": "^11.2.0",
     "gray-matter": "^4.0.3",
-    "next": "14.2.3",
+    "next": "^14.2.3",
     "next-mdx-remote": "^5.0.0",
     "next-seo": "^6.5.0",
     "next-themes": "^0.3.0",

@@ -9,7 +9,7 @@ export default async function BlogIndex() {
     <MainLayout>
       <header>
         <h1 className="leading-tight tracking-tighter text-4xl sm:text-5xl mb-6">
-          Posts
+          posts
         </h1>
       </header>
       <main>
