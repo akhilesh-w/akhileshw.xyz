@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import React, { Children } from "react";
 import MainLayout from "../../../components/main-layout";
 import linker from "../../../components/linker";
+import ProjectsSection from '../../../components/ProjectsSection';
 
 export const metadata: Metadata = {}
 
@@ -9,44 +10,74 @@ export default function About() {
   return (
     <MainLayout>
       <header>
-        <h1 className="leading-tight tracking-tighter text-4xl sm:text-5xl mb-6">Hi!</h1>
+        <h1 className="leading-tight tracking-tighter text-4xl sm:text-5xl mb-6">hi!</h1>
       </header>
 
       <main>
-        <section className="mb-6 leading-relaxed">
-          <p>This is Akhilesh. I grew up in a small town in Maharashtra and studied in Hyderabad, Telangana.</p>
-          <p>I'm a Graduate in Computer Applications from Osmania University, Hyderabad.</p>
-          <p>To other humans, I speak Marathi, Hindi and English. To silicon, I speak C, Python, JavaScript and a little bit of Rust.</p>
-        </section>
 
-        <section className="mb-6 leading-relaxed">
-          <h2 className="text-2xl font-semibold mb-4">Things I like</h2>
+        <p className="mb-6">exploring random things. onchain, offchain, and everything in between. creating things for the web.</p>
 
-          <ul className="space-y-4">
-            <li><strong>Music: </strong>I love listening to <a href="https://open.spotify.com/user/31knvgklastaewzgvec6s67stw74?si=64401350b4a542ad">new and interesting music</a>  and I curate many playlists of the music I like</li>
+        <ProjectsSection />
 
-
-            <li><strong>Photography: </strong>I love taking Photographs and collecting beautiful pictures.</li>
-
-            <li><strong>Linux: </strong>I love using Linux and Ricing it for productivity and faster workflows.</li>
-
-            <li><strong>Movies: </strong>I like watching movies, <em>especially sci-fi</em>. Interstellar, The Social Network and Whiplash are some of my favourite movies.</li>
-
-            <li><strong>Self hosting: </strong>I'm not confortable having my data on the cloud. I prefer the peace of mind that comes with keeping my data stored locally on my own devices.</li>
-
-            <li><strong>Writing: </strong>I sometimes write, I'm not at all consistent but I do write. Check out my <a href="https://akhileshw.substack.com/">Substack</a> and <a href="https://medium.com/@akhileshw">Medium</a></li>
-
-            <li><strong>Better Future: </strong>I am excited for the incredible future we can have if we work towards it. More rights to people, no more oppressive regimes, no more centralized platforms, better privacy for all.</li>
-
+        <section className="mb-6 leading-relaxed mt-12">
+          <h2 className="text-2xl font-semibold mb-4">things I like</h2>
+          <ul className="list-disc pl-6 space-y-4">
+            <li>
+              <strong>music: </strong>
+              I love listening to{" "}
+              <a
+                href="https://open.spotify.com/user/31knvgklastaewzgvec6s67stw74?si=64401350b4a542ad"
+                className="underline underline-offset-2 decoration-gray-500 hover:decoration-gray-700 transition-colors"
+              >
+                new and interesting music
+              </a>{" "}
+              and I curate many playlists of the music I like
+            </li>
+            <li>
+              <strong>photography: </strong>
+              I love taking pictures and collecting them.
+            </li>
+            <li>
+              <strong>linux: </strong>
+              love using linux and ricing it for productivity and faster workflows.
+            </li>
+            <li>
+              <strong>movies: </strong>
+              sci-fi addict. Interstellar, The Social Network and Whiplash are some of my favourite movies.
+            </li>
+            <li>
+              <strong>self hosting: </strong>
+              I don't trust the cloud. I'd rather have my files at home.
+            </li>
+            <li>
+              <strong>writing: </strong>
+              I'm also a inconsistent writer. check out my{" "}
+              <a
+                href="https://akhileshw.substack.com/"
+                className="underline underline-offset-2 decoration-gray-500 hover:decoration-gray-700 transition-colors"
+              >
+                substack
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://medium.com/@akhileshw"
+                className="underline underline-offset-2 decoration-gray-500 hover:decoration-gray-700 transition-colors"
+              >
+                medium
+              </a>
+            </li>
+            <li>
+              <strong>better future: </strong>
+              I am excited for the incredible future we can have if we work towards it. Freedom, privacy, decentralization.
+            </li>
           </ul>
-
         </section>
 
-        <section className="leading-relaxed space-y-4">
-          <p className="text-xl font-semibold">Connect</p>
+        <section className="leading-relaxed space-y-4 mt-12">
+          <p className="text-xl font-semibold">connect</p>
 
           <div>
-            Find me on these sites:{" "}
+            find me on these sites:{" "}
 
             {linker({ linktext: "Twitter", href: "https://twitter.com/theakhileshw" })}
             {", "}
@@ -64,11 +95,12 @@ export default function About() {
             {", "}
           </div>
 
-          <div> Reach out at {" "}
+          <div className="mt-12"> reach out at {" "}
             {linker({ linktext: "hey@akhileshw.xyz", href: "mailto:hey@akhileshw.xyz" })}
           </div>
 
         </section>
+
       </main>
     </MainLayout>
   )
