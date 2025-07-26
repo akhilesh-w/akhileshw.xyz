@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/theakhileshw
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://akhileshw.xyz
+  * I am theakhileshw (https://keybase.io/theakhileshw) on keybase.
+  * I have a public key ASAtE7a5CSan1kGORVI0ykERJNMnYUHK89WdWvjEu-PrdQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120fce827e2c642872a676ca57f3dedc25378e94a44daf42c013f578cfb581c09160a",
+      "host": "keybase.io",
+      "kid": "01202d13b6b90926a7d6418e455234ca411124d3276141caf3d59d5af8c4bbe3eb750a",
+      "uid": "7d8b0c04f0397bce5f9dd8e0bdc59f19",
+      "username": "theakhileshw"
+    },
+    "merkle_root": {
+      "ctime": 1753519976,
+      "hash": "3b8bf7ba285da0adb7499938847390c712c5620b6c6c9066e41c349995e07fe9d91878b67682afa4113f7c1f5d5629f2f353849ac1466f5066614fde2d5d9649",
+      "hash_meta": "c7bab614a38872401e61d3d30d60c285a07457d9640083d309fce659fc8be140",
+      "seqno": 26971979
+    },
+    "service": {
+      "entropy": "cOKWTUFJmMU+Tmuq7ymbxHUy",
+      "hostname": "akhileshw.xyz",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.5.1"
+  },
+  "ctime": 1753520053,
+  "expire_in": 504576000,
+  "prev": "6b3d57f5d9649347adbdc7f9dcfa1d40639a66f4b60a97bd1ba02e3ff97bf65a",
+  "seqno": 39,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgLRO2uQkmp9ZBjkVSNMpBESTTJ2FByvPVnVr4xLvj63UKp3BheWxvYWTESpcCJ8Qgaz1X9dlkk0etvcf53PodQGOaZvS2Cpe9G6AuP/l79lrEIPucmZ1mLs1w9JwK9S83oTtwOBxX0GJhWv3GGwx3DJj/AgHCo3NpZ8RA6pTv+ZoPr4ZWXLursLuzAkk0GTozmIwALXqqzYolSxkW7dMT9cXQ3B7dxQ/lP25DztGW9NzAEOvyVILrkdeXAKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIN0ELEjI6ePY07CXIjLBePPEGbp72UVHf3c97k03CR3No3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/theakhileshw
+
+==================================================================
