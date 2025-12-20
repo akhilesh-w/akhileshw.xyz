@@ -81,18 +81,21 @@ export default function About() {
 
             {linker({ linktext: "Twitter", href: "https://twitter.com/theakhileshw" })}
             {", "}
+            {linker({ linktext: "Farcaster", href: "https://farcaster.xyz/akhileshw" })}
+            {", "}
+            {linker({ linktext: "Mastodon", href: "https://universeodon.com/@akhileshw" })}
+            {", "}
             {linker({ linktext: "LinkedIn", href: "https://www.linkedin.com/in/akhilesh-w/" })}
             {", "}
             {linker({ linktext: "Github", href: "https://github.com/akhilesh-w" })}
             {", "}
+            {linker({ linktext: "Bluesky", href: "https://bsky.app/profile/akhileshw.bsky.social" })}
+            {", "}
             {linker({ linktext: "Peerlist", href: "https://peerlist.io/akhileshw" })}
-            {", "}
-            {linker({ linktext: "Mastodon", href: "https://universeodon.com/@akhileshw" })}
-            {", "}
-            {linker({ linktext: "Warpcast", href: "https://warpcast.com/akhileshw" })}
             {", "}
             {linker({ linktext: "Figma", href: "https://www.figma.com/@akhileshw" })}
             {", "}
+            {linker({ linktext: "Substack", href: "https://akhileshw.substack.com/" })}
           </div>
 
           <div className="mt-12"> reach out at {" "}

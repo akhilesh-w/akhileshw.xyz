@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic"
-import { ThemeToggle } from "./ThemeToggle"
 import Link from "next/link"
 
 const Clock = dynamic(() => import('./clock'), { ssr: false })
@@ -28,7 +27,6 @@ const Footer = () => (
           <path d="M4 9a1 1 0 011-1 7 7 0 017 7 1 1 0 11-2 0 5 5 0 00-5-5 1 1 0 01-1-1zM3 15a2 2 0 114 0 2 2 0 01-4 0z" />
         </svg>
       </Link>
-      <ThemeToggle />
     </div>
   </footer>
 )

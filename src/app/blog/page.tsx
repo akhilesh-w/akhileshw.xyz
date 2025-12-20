@@ -8,19 +8,26 @@ export default async function BlogIndex() {
   return (
     <MainLayout>
       <header>
-        <h1 className="leading-tight tracking-tighter text-4xl sm:text-5xl mb-6">
+        <h1 className="leading-tight tracking-tighter text-4xl sm:text-5xl mb-12 text-neutral-800 dark:text-neutral-400">
           posts
         </h1>
       </header>
       <main>
-        <ul className="space-y-4">
+        <div className="divide-y divide-neutral-200 dark:divide-neutral-800">
           {posts.map((post) => (
-            <li key={post.slug} className="flex justify-between items-center">
-              <Link href={`/blog/${post.slug}`} className="text-lg hover:underline" >{post.frontmatter.title}</Link>
-              <p className="text-sm text-gray-500">{post.frontmatter.date}</p>
-            </li>
+            <div key={post.slug} className="py-4 flex justify-between items-center group">
+              <Link
+                href={`/blog/${post.slug}`}
+                className="text-md text-neutral-800 dark:text-neutral-400 hover:underline decoration-neutral-400 underline-offset-4 transition-all"
+              >
+                {post.frontmatter.title}
+              </Link>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 italic">
+                {post.frontmatter.date}
+              </p>
+            </div>
           ))}
-        </ul>
+        </div>
       </main>
     </MainLayout>
   );
