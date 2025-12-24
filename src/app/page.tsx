@@ -33,9 +33,6 @@ export default async function Home() {
           {linker({ linktext: "Twitter", href: "https://twitter.com/theakhileshw" })}
           {linker({ linktext: "Farcaster", href: "https://farcaster.xyz/akhileshw" })}
           {linker({ linktext: "LinkedIn", href: "https://www.linkedin.com/in/akhilesh-w/" })}
-          {linker({ linktext: "Mastodon", href: "https://universeodon.com/@akhileshw" })}
-          {linker({ linktext: "Github", href: "https://github.com/akhilesh-w" })}
-          {linker({ linktext: "Bluesky", href: "https://bsky.app/profile/akhileshw.bsky.social" })}
         </div>
       </section>
     </MainLayout>
