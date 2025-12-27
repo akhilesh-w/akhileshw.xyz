@@ -2,8 +2,8 @@ import Link from "next/link"
 import { ThemeToggle } from './ThemeToggle'
 
 const NavigatorItem = ({ label, href }: { label: string; href: string }) => (
-  <Link href={href} className={`text-sm sm:text-base tracking-tight text-neutral-400 hover:underline hover:underline-offset-4 hover:transition-transform`}>
-    <p>{label}</p>
+  <Link href={href} className="text-sm sm:text-base tracking-tight text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 underline font-medium decoration-transparent hover:decoration-neutral-400/40 dark:hover:decoration-neutral-600/40 underline-offset-[2px] decoration-[1.5px] transition-all">
+    {label}
   </Link>
 )
 

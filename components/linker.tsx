@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const linker = ({ linktext, href }: { linktext: string; href: string }) => (
   <Link href={href} passHref target="_blank">
-    <span className="text-sm sm:text-base tracking-tight underline hover:underline-offset-4 decoration-gray-400 hover:transition-transform">
+    <span className="text-sm sm:text-base tracking-tight underline font-medium decoration-neutral-400/40 dark:decoration-neutral-600/40 underline-offset-[2px] decoration-[1.5px] hover:decoration-neutral-600 dark:hover:decoration-neutral-400 transition-colors">
       {linktext}
     </span>
   </Link>

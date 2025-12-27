@@ -8,10 +8,9 @@ personal website
 - [*] Setup a blog (w/ MDX)
 - [ ] Visual Bookshelf (covers + ratings)
 - [x] Reading Progress Bar
-- [ ] View Transitions API for "app-like" transitions
 - [ ] Custom F1-themed 404 page 🏎️💨
 - [ ] Command Palette (Cmd + K) for search & navigation
-- [ ] Spotify now playing on /now page 
+- [x] Spotify now playing on /now page 
 - [ ] Steam game activity on /now page
 - [ ] Code Block "Copy" Buttons for MDX posts
 - [ ] A search functionality for the blog

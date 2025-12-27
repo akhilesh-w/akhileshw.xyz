@@ -37,6 +37,7 @@ body {
   background: linear-gradient(to bottom,
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
 p {
@@ -89,6 +90,42 @@ p {
   }
 }
 
+@keyframes music-bar-1 {
+
+  0%,
+  100% {
+    height: 4px;
+  }
+
+  50% {
+    height: 12px;
+  }
+}
+
+@keyframes music-bar-2 {
+
+  0%,
+  100% {
+    height: 8px;
+  }
+
+  50% {
+    height: 4px;
+  }
+}
+
+@keyframes music-bar-3 {
+
+  0%,
+  100% {
+    height: 12px;
+  }
+
+  50% {
+    height: 6px;
+  }
+}
+
 .prose {
   --tw-prose-body: theme('colors.gray.200');
   --tw-prose-headings: theme('colors.white');
@@ -107,5 +144,5 @@ p {
 }
 
 .prose-links a {
-  @apply underline hover:underline-offset-4 decoration-gray-400 hover:transition-transform;
+  @apply underline font-medium decoration-neutral-400/40 dark:decoration-neutral-600/40 underline-offset-[2px] decoration-[1.5px] hover:decoration-neutral-600 dark:hover:decoration-neutral-400 transition-colors;
 }

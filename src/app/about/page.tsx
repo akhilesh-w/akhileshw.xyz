@@ -26,14 +26,9 @@ export default function About() {
           <ul className="list-disc pl-6 space-y-4">
             <li>
               <strong>music: </strong>
-              I love listening to{" "}
-              <a
-                href="https://open.spotify.com/user/31knvgklastaewzgvec6s67stw74?si=64401350b4a542ad"
-                className="underline underline-offset-2 decoration-gray-500 hover:decoration-gray-700 transition-colors"
-              >
-                new and interesting music
-              </a>{" "}
-              and I curate many playlists of the music I like
+              I love listening to {" "}
+              {linker({ linktext: "new and interesting music", href: "https://open.spotify.com/user/31knvgklastaewzgvec6s67stw74?si=64401350b4a542ad" })} {" "}
+              and curating playlists of the songs I like
             </li>
             <li>
               <strong>photography: </strong>
@@ -54,19 +49,10 @@ export default function About() {
             <li>
               <strong>writing: </strong>
               I'm also a inconsistent writer. check out my{" "}
-              <a
-                href="https://akhileshw.substack.com/"
-                className="underline underline-offset-2 decoration-gray-500 hover:decoration-gray-700 transition-colors"
-              >
-                substack
-              </a>{" "}
+              {linker({ linktext: "substack", href: "https://akhileshw.substack.com/" })}
+              {" "}
               and{" "}
-              <a
-                href="https://medium.com/@akhileshw"
-                className="underline underline-offset-2 decoration-gray-500 hover:decoration-gray-700 transition-colors"
-              >
-                medium
-              </a>
+              {linker({ linktext: "medium", href: "https://medium.com/@akhileshw" })}
             </li>
             <li>
               <strong>better future: </strong>
