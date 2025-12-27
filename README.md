@@ -22,3 +22,4 @@ personal website
 - [ ] A /places page to show all the places I've been to
 - [ ] F1 "Next Race" Widget on /now page
 - [ ] Letterboxd Integration
+- [x] Interactive "Year in Progress" bar

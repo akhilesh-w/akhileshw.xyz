@@ -6,6 +6,7 @@ import { getAllPosts } from "../utils/api";
 import Link from "next/link";
 import linker from "../../components/linker";
 import NowPlaying from "../../components/NowPlaying";
+import { YearProgress } from "../../components/YearProgress";
 
 export const metadata: Metadata = {}
 
@@ -31,6 +32,11 @@ export default async function Home() {
       {/* Spotify Now Playing */}
       <section className="mb-10 appear stagger-5">
         <NowPlaying />
+      </section>
+
+      {/* Year in Progress */}
+      <section className="mb-10 appear stagger-5">
+        <YearProgress />
       </section>
 
       {/* links */}
