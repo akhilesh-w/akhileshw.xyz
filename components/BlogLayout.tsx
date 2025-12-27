@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import MainLayout from "./main-layout";
+import { ReadingProgressBar } from "./ReadingProgressBar";
 
 interface BlogLayoutProps {
   children: ReactNode;
@@ -13,6 +14,7 @@ interface BlogLayoutProps {
 export default function BlogLayout({ children, frontmatter }: BlogLayoutProps) {
   return (
     <MainLayout>
+      <ReadingProgressBar />
       <article className="max-w-3xl mx-auto px-4 sm:px-6 py-6">
         <header className="mb-8">
           <h1 className="text-2xl font-semibold text-neutral-800 dark:text-neutral-400 mb-2">{frontmatter.title}</h1>
