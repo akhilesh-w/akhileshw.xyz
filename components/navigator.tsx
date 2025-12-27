@@ -8,9 +8,9 @@ const NavigatorItem = ({ label, href }: { label: string; href: string }) => (
 )
 
 const Navigator = () => (
-  <header className="flex justify-between pt-4">
-    <div className='flex pb-8'>
-      <Link href="/" className="text-neutral-400 pr-2">
+  <header className="flex justify-between items-center pt-4 pb-8">
+    <div className='flex'>
+      <Link href="/" className="text-neutral-400 pr-2 leading-none">
         <h1>
           akhilesh
         </h1>
@@ -22,7 +22,7 @@ const Navigator = () => (
       </div> */}
     </div>
 
-    <nav className='flex w-full gap-4 pb-8 justify-end'>
+    <nav className='flex gap-2 sm:gap-4 justify-end items-center flex-nowrap'>
       <NavigatorItem label='about' href='/about' />
       <NavigatorItem label='now' href='/now' />
       <NavigatorItem label='blog' href='/blog' />
