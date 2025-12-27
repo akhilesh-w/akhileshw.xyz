@@ -18,8 +18,8 @@ personal website
 - [ ] Add animations or transitions for better UX
 - [ ] A sitemap for better navigation
 - [ ] Newsletter Subscription (Buttondown/Substack)
-- [ ] RSS Feed Discovery
-- [ ] Guestbook - A page for visitors to sign
+- [x] RSS Feed Discovery
+- [x] Guestbook - A page for visitors to sign
 - [ ] A /places page to show all the places I've been to
 - [ ] F1 "Next Race" Widget on /now page
 - [ ] Letterboxd Integration

@@ -102,6 +102,12 @@ export default function About() {
             {linker({ linktext: "hey@akhileshw.xyz", href: "mailto:hey@akhileshw.xyz" })}
           </div>
 
+          <div className="mt-20 pt-10 border-t border-neutral-100 dark:border-neutral-800">
+            <p className="text-sm opacity-60 italic">
+              Enjoyed your stay? {linker({ linktext: "Sign my guestbook", href: "/guestbook" })}
+            </p>
+          </div>
+
         </section>
 
       </main>

@@ -3,9 +3,7 @@ import { getAllPosts } from '../../utils/api'
 import { NextResponse } from 'next/server'
 
 export async function GET() {
-  console.log('Fetching posts...')
   const posts = await getAllPosts()
-  console.log('Posts fetched:', posts.length)
   const siteURL = 'https://akhileshw.xyz'
   const author = {
     name: 'Akhilesh Waghmare',
@@ -24,7 +22,7 @@ export async function GET() {
     copyright: `All rights reserved ${new Date().getFullYear()}, Akhilesh Waghmare`,
     updated: new Date(),
     feedLinks: {
-      rss2: `${siteURL}/api/rss`,
+      rss2: `${siteURL}/rss`,
     },
     author,
   })
