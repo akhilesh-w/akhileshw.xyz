@@ -5,6 +5,7 @@ import me from "../../public/me.jpg";
 import { getAllPosts } from "../utils/api";
 import Link from "next/link";
 import linker from "../../components/linker";
+import NowPlaying from "../../components/NowPlaying";
 
 export const metadata: Metadata = {}
 
@@ -25,6 +26,11 @@ export default async function Home() {
           If this is your first time visiting my site, you might want to start with my <Link href="/about" className="underline">about</Link> page for some more details about who I am and what I do, or my <Link href="/now" className="underline">now</Link> page to see what I'm up to and what's on my mind at the moment.
         </p>
 
+      </section>
+
+      {/* Spotify Now Playing */}
+      <section className="mb-6 appear stagger-5">
+        <NowPlaying />
       </section>
 
       {/* links */}

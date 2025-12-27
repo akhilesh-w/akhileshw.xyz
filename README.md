@@ -15,7 +15,7 @@ personal website
 - [ ] Steam game activity on /now page
 - [ ] Code Block "Copy" Buttons for MDX posts
 - [ ] A search functionality for the blog
-- [ ] Add animations or transitions for better UX
+- [x] Add animations or transitions for better UX
 - [ ] A sitemap for better navigation
 - [ ] Newsletter Subscription (Buttondown/Substack)
 - [x] RSS Feed Discovery
