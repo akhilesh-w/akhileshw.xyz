@@ -1,8 +1,8 @@
-import Link from 'next/link'
+import Link from "next/link"
 import { ThemeToggle } from './ThemeToggle'
 
 const NavigatorItem = ({ label, href }: { label: string; href: string }) => (
-  <Link href={href} as={href} className={`text-sm sm:text-base tracking-tight text-neutral-400 hover:underline hover:underline-offset-4 hover:transition-transform`}>
+  <Link href={href} className={`text-sm sm:text-base tracking-tight text-neutral-400 hover:underline hover:underline-offset-4 hover:transition-transform`}>
     <p>{label}</p>
   </Link>
 )
@@ -10,7 +10,7 @@ const NavigatorItem = ({ label, href }: { label: string; href: string }) => (
 const Navigator = () => (
   <header className="flex justify-between pt-4">
     <div className='flex pb-8'>
-      <Link href="/" as="/" className="text-neutral-400 pr-2">
+      <Link href="/" className="text-neutral-400 pr-2">
         <h1>
           akhilesh
         </h1>

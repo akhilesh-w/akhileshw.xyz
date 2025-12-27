@@ -13,7 +13,7 @@ const NavigatorItem = ({ label, href }: { label: string; href: string }) => (
 export default function Nav() {
   return (
     <MainLayout>
-      <header>
+      <header className="appear stagger-1">
         <h1 className="leading-tight tracking-tighter text-4xl sm:text-5xl mb-8">
           nav
         </h1>
@@ -21,15 +21,17 @@ export default function Nav() {
 
       <main>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {/* <NavigatorItem label="/About" href="/about" /> */}
-          {/* <NavigatorItem label="/Resume" href="/resume.pdf" /> */}
-          <NavigatorItem label="/Now" href="/now" />
-          <NavigatorItem label="/Uses" href="/uses" />
-          {/* <NavigatorItem label="/Pictures" href="/pictures" /> */}
-          <NavigatorItem label="/Bookshelf" href="/bookshelf" />
-          <NavigatorItem label="/Reading" href="/reading" />
-          <NavigatorItem label="/Donate" href="/donate" />
-
+          {[
+            { label: "/Now", href: "/now" },
+            { label: "/Uses", href: "/uses" },
+            { label: "/Bookshelf", href: "/bookshelf" },
+            { label: "/Reading", href: "/reading" },
+            { label: "/Donate", href: "/donate" }
+          ].map((item, index) => (
+            <div key={item.label} className={`appear stagger-${Math.min(index + 2, 5)}`}>
+              <NavigatorItem label={item.label} href={item.href} />
+            </div>
+          ))}
         </div>
       </main>
     </MainLayout>

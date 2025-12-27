@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 export default function Uses() {
   return (
     <MainLayout>
-      <header>
+      <header className="appear stagger-1">
         <h1 className="leading-tight tracking-tighter text-4xl sm:text-5xl mb-6">
           uses
         </h1>
       </header>
       <main>
-        <section className="mb-8">
+        <section className="mb-8 appear stagger-2">
           <h2 className="text-2xl font-semibold mb-4">hardware</h2>
           <ul className="space-y-4 leading-relaxed">
             <li><strong>laptop:</strong> Lenovo IdeaPad Gaming 3, It runs Arch.</li>
@@ -26,7 +26,7 @@ export default function Uses() {
           </ul>
         </section>
 
-        <section>
+        <section className="appear stagger-3">
           <h2 className="text-2xl font-semibold mb-4">Software</h2>
           <ul className="space-y-4">
             <li>

@@ -13,22 +13,22 @@ export default async function Home() {
 
   return (
     <MainLayout>
-      <div className="mb-6">
+      <div className="mb-6 appear stagger-1">
         <Photo src={me} />
       </div>
 
       <section className="mb-10 space-y-4 leading-relaxed">
-        <p>Hey, I'm <strong>Akhilesh</strong> - part coder, part storyteller, full-time explorer of ideas.</p>
-        <p>I'm a generalist on a journey to be a polymath - stitching together software, stories, systems and soul.</p>
+        <p className="appear stagger-2">Hey, I'm <strong>Akhilesh</strong> - part coder, part storyteller, full-time explorer of ideas.</p>
+        <p className="appear stagger-3">I'm a generalist on a journey to be a polymath - stitching together software, stories, systems and soul.</p>
 
-        <p>
+        <p className="appear stagger-4">
           If this is your first time visiting my site, you might want to start with my <Link href="/about" className="underline">about</Link> page for some more details about who I am and what I do, or my <Link href="/now" className="underline">now</Link> page to see what I'm up to and what's on my mind at the moment.
         </p>
 
       </section>
 
       {/* links */}
-      <section>
+      <section className="appear stagger-5">
         <div className="flex flex-wrap gap-2">
           {linker({ linktext: "Twitter", href: "https://twitter.com/theakhileshw" })}
           {linker({ linktext: "Farcaster", href: "https://farcaster.xyz/akhileshw" })}

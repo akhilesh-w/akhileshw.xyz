@@ -9,17 +9,19 @@ export const metadata: Metadata = {}
 export default function About() {
   return (
     <MainLayout>
-      <header>
+      <header className="appear stagger-1">
         <h1 className="leading-tight tracking-tighter text-4xl sm:text-5xl mb-6">hi!</h1>
       </header>
 
       <main>
 
-        <p className="mb-6">exploring random things. onchain, offchain, and everything in between. creating things for the web.</p>
+        <p className="mb-6 appear stagger-2">exploring random things. onchain, offchain, and everything in between. creating things for the web.</p>
 
-        <ProjectsSection />
+        <div className="appear stagger-3">
+          <ProjectsSection />
+        </div>
 
-        <section className="mb-6 leading-relaxed mt-12">
+        <section className="mb-6 leading-relaxed mt-12 appear stagger-4">
           <h2 className="text-2xl font-semibold mb-4">things I like</h2>
           <ul className="list-disc pl-6 space-y-4">
             <li>
@@ -73,7 +75,7 @@ export default function About() {
           </ul>
         </section>
 
-        <section className="leading-relaxed space-y-4 mt-12">
+        <section className="leading-relaxed space-y-4 mt-12 appear stagger-5">
           <p className="text-xl font-semibold">connect</p>
 
           <div>

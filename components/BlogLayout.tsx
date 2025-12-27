@@ -16,13 +16,13 @@ export default function BlogLayout({ children, frontmatter }: BlogLayoutProps) {
     <MainLayout>
       <ReadingProgressBar />
       <article className="max-w-3xl mx-auto px-4 sm:px-6 py-6">
-        <header className="mb-8">
+        <header className="mb-8 appear stagger-1">
           <h1 className="text-2xl font-semibold text-neutral-800 dark:text-neutral-400 mb-2">{frontmatter.title}</h1>
           <div className="text-neutral-500 text-sm">
             By {frontmatter.author} on {frontmatter.date}
           </div>
         </header>
-        <div className="prose lg:prose-xl max-w-none space-y-6 leading-relaxed prose-links">
+        <div className="prose lg:prose-xl max-w-none space-y-6 leading-relaxed prose-links appear stagger-2">
           {children}
         </div>
       </article>
