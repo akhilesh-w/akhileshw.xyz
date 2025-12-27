@@ -16,10 +16,9 @@ export async function generateStaticParams() {
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const post = await getPostBySlug(params.slug);
-  const { title, date, author, ...restFrontmatter } = post.frontmatter;
 
   return (
-    <BlogLayout frontmatter={{ title, date, author }}>
+    <BlogLayout frontmatter={post.frontmatter as any}>
       <MDXRemote
         source={post.content}
         components={components}

@@ -21,9 +21,11 @@ async function getAccessToken() {
             grant_type: 'refresh_token',
             refresh_token: REFRESH_TOKEN || '',
         }),
+        cache: 'no-store',
     });
 
-    return response.json();
+    const data = await response.json();
+    return data;
 }
 
 export async function GET() {
@@ -32,10 +34,10 @@ export async function GET() {
         const access_token = tokenData.access_token;
 
         if (!access_token) {
-            console.error('Failed to get access token:', tokenData);
             return NextResponse.json({ isPlaying: false, error: 'Token error' });
         }
 
+        // Fetch currently playing
         // Fetch currently playing
         const nowPlayingResponse = await fetch(NOW_PLAYING_ENDPOINT, {
             headers: { Authorization: `Bearer ${access_token}` },
@@ -45,6 +47,10 @@ export async function GET() {
         let currentSong = null;
         if (nowPlayingResponse.status === 200) {
             currentSong = await nowPlayingResponse.json();
+        } else if (nowPlayingResponse.status === 204) {
+            // Nothing currently playing
+        } else {
+            // Handle error
         }
 
         // 1. If playing, return immediately
@@ -60,7 +66,6 @@ export async function GET() {
         }
 
         // 2. If NOT playing but we HAVE a current song (meaning it's paused)
-        // We prefer this over recently-played because it's the active session
         if (currentSong && currentSong.item) {
             return NextResponse.json({
                 isPlaying: false,
@@ -73,8 +78,7 @@ export async function GET() {
             });
         }
 
-        // 3. Fallback to recently played if player is idle (204)
-        console.log('Fetching recently played for timestamp...');
+        // 3. Fallback to recently played
         const recentlyPlayedResponse = await fetch(RECENTLY_PLAYED_ENDPOINT, {
             headers: { Authorization: `Bearer ${access_token}` },
             cache: 'no-store',
@@ -100,7 +104,6 @@ export async function GET() {
 
         return NextResponse.json({ isPlaying: false });
     } catch (error) {
-        console.error('Error fetching now playing:', error);
         return NextResponse.json({ isPlaying: false });
     }
 }
