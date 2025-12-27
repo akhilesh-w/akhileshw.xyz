@@ -102,7 +102,15 @@ export default function NowPlaying() {
                         {data.album}
                     </span>
                 </div>
-                <SpotifyIcon className={`h-5 w-5 ${data.isPlaying ? 'text-green-500' : 'text-neutral-400 dark:text-neutral-600'} opacity-60 group-hover:opacity-100 transition-opacity`} />
+                {data.isPlaying ? (
+                    <div className="flex items-end gap-[3px] h-4 w-4 mb-2">
+                        <span className="w-1 bg-green-500 rounded-sm" style={{ animation: 'music-bar-1 0.8s ease-in-out infinite' }}></span>
+                        <span className="w-1 bg-green-500 rounded-sm" style={{ animation: 'music-bar-2 0.8s ease-in-out infinite' }}></span>
+                        <span className="w-1 bg-green-500 rounded-sm" style={{ animation: 'music-bar-3 0.8s ease-in-out infinite' }}></span>
+                    </div>
+                ) : (
+                    <SpotifyIcon className="h-5 w-5 text-neutral-400 dark:text-neutral-600 opacity-60 group-hover:opacity-100 transition-opacity" />
+                )}
             </a>
             <div className="flex items-center gap-2 text-xs text-neutral-400 dark:text-neutral-600 pl-1">
                 {data.isPlaying ? (
