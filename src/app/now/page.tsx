@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import linker from "../../../components/linker";
+import Linker from "../../../components/linker";
 import MainLayout from "../../../components/main-layout";
 
 export const metadata: Metadata = {};
@@ -17,26 +17,20 @@ export default function Now() {
         <div className="mb-8 space-y-4">
           <p className="appear stagger-2">Developing skill through doing, guiltlessly exploring passion and interests, imbuing quality. Mindful that <i>everything around me is someone's life work.</i></p>
 
-          <p className="appear stagger-3">Living in the beautiful city of {linker({ linktext: "Hyderabad, Telangana.", href: "https://maps.app.goo.gl/mcHDLagbZnhuL8p89", })}</p>
+          <p className="appear stagger-3">Living in the beautiful city of <Linker href="https://maps.app.goo.gl/mcHDLagbZnhuL8p89">Hyderabad, Telangana.</Linker></p>
 
           <p className="appear stagger-4">Learning C <em>(after forgetting about it since college)</em>. Also learning Rust <em>(to build for the solana ecosystem)</em></p>
 
-          <p className="appear stagger-5">Mainly building software for the web using modern tools and frameworks like {linker({ linktext: "Next.js", href: "https://nextjs.org/" })} and {linker({ linktext: "Tailwind", href: "https://tailwindcss.com/" })}.</p>
+          <p className="appear stagger-5">Mainly building software for the web using modern tools and frameworks like <Linker href="https://nextjs.org/">Next.js</Linker> and <Linker href="https://tailwindcss.com/">Tailwind</Linker>.</p>
 
           <p className="appear stagger-5">• Currently reading 'Metamorphosis' by 'Franz Kafka'</p>
           <p className="appear stagger-5">• What else?</p>
-          <p className="appear stagger-5">Have become a nerd about Formula 1 🏎 after watching {linker({
-            linktext: "Drive to Survive", href: "https://www.netflix.com/in/title/80204890"
-          })} on Netflix. Have done so much research about terms, historical events, the cars and obviously the players!</p>
+          <p className="appear stagger-5">Have become a nerd about Formula 1 🏎 after watching <Linker href="https://www.netflix.com/in/title/80204890">Drive to Survive</Linker> on Netflix. Have done so much research about terms, historical events, the cars and obviously the players!</p>
         </div>
 
         <div className="pt-28"></div>
         <p className="appear stagger-5 opacity-60">
-          Inspired by <i>Derek Siver's</i>{" "}
-          {linker({
-            linktext: "now movement",
-            href: "https://nownownow.com/about",
-          })}{" "}
+          Inspired by <i>Derek Siver's</i> <Linker href="https://nownownow.com/about">now movement</Linker>
         </p>
       </main>
     </MainLayout>

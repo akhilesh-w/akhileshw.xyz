@@ -1,4 +1,4 @@
-import linker from "../../../components/linker";
+import Linker from "../../../components/linker";
 import MainLayout from "../../../components/main-layout";
 
 export default function donate() {
@@ -17,7 +17,7 @@ export default function donate() {
             { tag: "Monero", color: "text-blue-400", qr: "../monero.png", address: "47anVWGq7Ed4JDM5WyZWAkdq7fSzpNJWZ4KZuSKCgqM8FcFMSCvMSAxggJrCgqid7EMeNjtgBAChU7akXYoiinu25VkGAWE" }
           ].map((coin, index) => (
             <p key={coin.tag} className={`appear stagger-${Math.min(index + 3, 5)}`}>
-              <strong className={`${coin.color} hover:text-pink-500`}>{coin.tag} {linker({ linktext: "(QR)", href: coin.qr })}: </strong>
+              <strong className={`${coin.color} hover:text-pink-500`}>{coin.tag} <Linker href={coin.qr}>(QR)</Linker>: </strong>
               {coin.address}
             </p>
           ))}

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import React, { Children } from "react";
 import MainLayout from "../../../components/main-layout";
-import linker from "../../../components/linker";
+import Linker from "../../../components/linker";
 import ProjectsSection from '../../../components/ProjectsSection';
 
 export const metadata: Metadata = {}
@@ -26,9 +26,7 @@ export default function About() {
           <ul className="list-disc pl-6 space-y-4">
             <li>
               <strong>music: </strong>
-              I love listening to {" "}
-              {linker({ linktext: "new and interesting music", href: "https://open.spotify.com/user/31knvgklastaewzgvec6s67stw74?si=64401350b4a542ad" })} {" "}
-              and curating playlists of the songs I like
+              I love listening to <Linker href="https://open.spotify.com/user/31knvgklastaewzgvec6s67stw74?si=64401350b4a542ad">new and interesting music</Linker> and curating playlists of the songs I like
             </li>
             <li>
               <strong>photography: </strong>
@@ -48,11 +46,7 @@ export default function About() {
             </li>
             <li>
               <strong>writing: </strong>
-              I'm also a inconsistent writer. check out my{" "}
-              {linker({ linktext: "substack", href: "https://akhileshw.substack.com/" })}
-              {" "}
-              and{" "}
-              {linker({ linktext: "medium", href: "https://medium.com/@akhileshw" })}
+              I'm also a inconsistent writer. check out my <Linker href="https://akhileshw.substack.com/">substack</Linker> and <Linker href="https://medium.com/@akhileshw">medium</Linker>
             </li>
             <li>
               <strong>better future: </strong>
@@ -65,34 +59,24 @@ export default function About() {
           <p className="text-xl font-semibold">connect</p>
 
           <div>
-            find me on these sites:{" "}
-
-            {linker({ linktext: "Twitter", href: "https://twitter.com/theakhileshw" })}
-            {", "}
-            {linker({ linktext: "Farcaster", href: "https://farcaster.xyz/akhileshw" })}
-            {", "}
-            {linker({ linktext: "Mastodon", href: "https://universeodon.com/@akhileshw" })}
-            {", "}
-            {linker({ linktext: "LinkedIn", href: "https://www.linkedin.com/in/akhilesh-w/" })}
-            {", "}
-            {linker({ linktext: "Github", href: "https://github.com/akhilesh-w" })}
-            {", "}
-            {linker({ linktext: "Bluesky", href: "https://bsky.app/profile/akhileshw.bsky.social" })}
-            {", "}
-            {linker({ linktext: "Peerlist", href: "https://peerlist.io/akhileshw" })}
-            {", "}
-            {linker({ linktext: "Figma", href: "https://www.figma.com/@akhileshw" })}
-            {", "}
-            {linker({ linktext: "Substack", href: "https://akhileshw.substack.com/" })}
+            find me on these sites:
+            <Linker href="https://twitter.com/theakhileshw">Twitter</Linker>,
+            <Linker href="https://farcaster.xyz/akhileshw">Farcaster</Linker>,
+            <Linker href="https://universeodon.com/@akhileshw">Mastodon</Linker>,
+            <Linker href="https://www.linkedin.com/in/akhilesh-w/">LinkedIn</Linker>,
+            <Linker href="https://github.com/akhilesh-w">Github</Linker>,
+            <Linker href="https://bsky.app/profile/akhileshw.bsky.social">Bluesky</Linker>,
+            <Linker href="https://peerlist.io/akhileshw">Peerlist</Linker>,
+            <Linker href="https://www.figma.com/@akhileshw">Figma</Linker>,
+            <Linker href="https://akhileshw.substack.com/">Substack</Linker>
           </div>
 
-          <div className="mt-12"> reach out at {" "}
-            {linker({ linktext: "hey@akhileshw.xyz", href: "mailto:hey@akhileshw.xyz" })}
+          <div className="mt-12"> reach out at <Linker href="mailto:hey@akhileshw.xyz">hey@akhileshw.xyz</Linker>
           </div>
 
           <div className="mt-20 pt-10 border-t border-neutral-100 dark:border-neutral-800">
             <p className="text-sm opacity-60 italic">
-              Enjoyed your stay? {linker({ linktext: "Sign my guestbook", href: "/guestbook" })}
+              Enjoyed your stay? <Linker href="/guestbook">Sign my guestbook</Linker>
             </p>
           </div>
 
