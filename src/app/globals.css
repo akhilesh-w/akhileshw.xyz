@@ -74,7 +74,44 @@ p {
   .stagger-5 {
     animation-delay: 0.5s;
   }
+
+  /* Wiggle Animation for Header Easter Egg */
+  .wiggle:active {
+    animation: wiggle 0.3s ease-in-out;
+  }
+
+  /* Spin Animation for Spotify Vinyl Easter Egg */
+  .spin-hover:hover img {
+    animation: spin 3s linear infinite;
+  }
 }
+
+@keyframes wiggle {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-5deg);
+  }
+
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 
 @keyframes show {
   from {

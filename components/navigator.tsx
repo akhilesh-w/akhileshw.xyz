@@ -10,7 +10,7 @@ const NavigatorItem = ({ label, href }: { label: string; href: string }) => (
 const Navigator = () => (
   <header className="flex justify-between items-center pt-4 pb-8">
     <div className='flex'>
-      <Link href="/" className="text-neutral-400 pr-2 leading-none">
+      <Link href="/" className="text-neutral-400 pr-2 leading-none cursor-pointer wiggle inline-block select-none">
         <h1>
           akhilesh
         </h1>
@@ -26,6 +26,7 @@ const Navigator = () => (
       <NavigatorItem label='about' href='/about' />
       <NavigatorItem label='now' href='/now' />
       <NavigatorItem label='blog' href='/blog' />
+      <NavigatorItem label='logs' href='/logs' />
       {/* <NavigatorItem label='resume' href='/resume.pdf' /> */}
       <NavigatorItem label='uses' href='/uses' />
       <NavigatorItem label='notes' href='http://notes.akhileshw.xyz/' />

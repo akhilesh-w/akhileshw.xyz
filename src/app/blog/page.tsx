@@ -15,20 +15,18 @@ export default async function BlogIndex() {
       <main>
         <div className="divide-y divide-neutral-200 dark:divide-neutral-800">
           {posts.map((post, index) => (
-            <div
+            <Link
               key={post.slug}
-              className={`py-4 flex justify-between items-center group appear stagger-${Math.min(index + 2, 5)}`}
+              href={`/blog/${post.slug}`}
+              className={`py-4 flex justify-between items-center group cursor-pointer appear stagger-${Math.min(index + 2, 5)} hover:bg-neutral-50 dark:hover:bg-neutral-800/30 transition-all px-2 -mx-2 rounded-lg`}
             >
-              <Link
-                href={`/blog/${post.slug}`}
-                className="text-md text-neutral-800 dark:text-neutral-400 hover:underline decoration-neutral-400 underline-offset-4 transition-all"
-              >
+              <span className="text-md text-neutral-800 dark:text-neutral-400 group-hover:underline decoration-neutral-400 underline-offset-4 transition-all">
                 {post.frontmatter.title}
-              </Link>
+              </span>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 italic">
                 {post.frontmatter.date}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </main>

@@ -18,7 +18,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const post = await getPostBySlug(params.slug);
 
   return (
-    <BlogLayout frontmatter={post.frontmatter as any}>
+    <BlogLayout frontmatter={post.frontmatter as any} slug={params.slug}>
       <MDXRemote
         source={post.content}
         components={components}

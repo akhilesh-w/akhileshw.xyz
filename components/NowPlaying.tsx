@@ -80,7 +80,7 @@ export default function NowPlaying() {
                 href={data.songUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-3 rounded-xl bg-neutral-100 dark:bg-neutral-800/50 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors group"
+                className="flex items-center gap-4 p-3 rounded-xl bg-neutral-100 dark:bg-neutral-800/50 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors group spin-hover"
             >
                 {data.albumImageUrl && (
                     <Image
@@ -88,7 +88,7 @@ export default function NowPlaying() {
                         alt={data.album || 'Album Art'}
                         width={56}
                         height={56}
-                        className="rounded-lg shadow-md"
+                        className="rounded-lg shadow-md group-hover:rounded-full transition-all duration-500"
                     />
                 )}
                 <div className="flex flex-col flex-1 min-w-0">

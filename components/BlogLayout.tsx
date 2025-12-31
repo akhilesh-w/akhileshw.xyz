@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import MainLayout from "./main-layout";
 import { ReadingProgressBar } from "./ReadingProgressBar";
 import Link from "next/link";
+import { Schema } from "./Schema";
 
 interface BlogLayoutProps {
   children: ReactNode;
@@ -16,11 +17,31 @@ interface BlogLayoutProps {
     paragraph?: string;
     other?: string;
   };
+  slug?: string;
 }
 
-export default function BlogLayout({ children, frontmatter }: BlogLayoutProps) {
+export default function BlogLayout({ children, frontmatter, slug }: BlogLayoutProps) {
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": frontmatter.title,
+    "description": frontmatter.description || "",
+    "datePublished": frontmatter.date,
+    "author": {
+      "@type": "Person",
+      "name": frontmatter.author,
+      "url": "https://akhileshw.xyz/about",
+    },
+    "url": `https://akhileshw.xyz/blog/${slug}`,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://akhileshw.xyz/blog/${slug}`,
+    },
+  };
+
   return (
     <MainLayout>
+      <Schema data={blogSchema} />
       <ReadingProgressBar />
       <article className="max-w-3xl mx-auto px-4 sm:px-6 py-6 font-sans">
         <header className="mb-8 appear stagger-1 relative">

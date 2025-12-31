@@ -59,16 +59,7 @@ export default function About() {
           <p className="text-xl font-semibold">connect</p>
 
           <div>
-            find me on these sites:
-            <Linker href="https://twitter.com/theakhileshw">Twitter</Linker>,
-            <Linker href="https://farcaster.xyz/akhileshw">Farcaster</Linker>,
-            <Linker href="https://universeodon.com/@akhileshw">Mastodon</Linker>,
-            <Linker href="https://www.linkedin.com/in/akhilesh-w/">LinkedIn</Linker>,
-            <Linker href="https://github.com/akhilesh-w">Github</Linker>,
-            <Linker href="https://bsky.app/profile/akhileshw.bsky.social">Bluesky</Linker>,
-            <Linker href="https://peerlist.io/akhileshw">Peerlist</Linker>,
-            <Linker href="https://www.figma.com/@akhileshw">Figma</Linker>,
-            <Linker href="https://akhileshw.substack.com/">Substack</Linker>
+            find me on these sites: <Linker href="https://twitter.com/theakhileshw">Twitter</Linker>, <Linker href="https://farcaster.xyz/akhileshw">Farcaster</Linker>, <Linker href="https://bsky.app/profile/akhileshw.bsky.social">Bluesky</Linker>, <Linker href="https://universeodon.com/@akhileshw">Mastodon</Linker>, <Linker href="https://www.linkedin.com/in/akhilesh-w/">LinkedIn</Linker>, <Linker href="https://github.com/akhilesh-w">Github</Linker>, <Linker href="https://peerlist.io/akhileshw">Peerlist</Linker>, <Linker href="https://www.figma.com/@akhileshw">Figma</Linker>, <Linker href="https://akhileshw.substack.com/">Substack</Linker>, <Linker href="https://keybase.io/theakhileshw">Keybase</Linker>
           </div>
 
           <div className="mt-12"> reach out at <Linker href="mailto:hey@akhileshw.xyz">hey@akhileshw.xyz</Linker>

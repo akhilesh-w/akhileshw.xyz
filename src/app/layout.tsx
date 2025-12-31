@@ -4,6 +4,9 @@ import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { Providers } from "../../components/Providers";
+import { ConsoleSignature } from "../../components/ConsoleSignature";
+import CommandPalette from "../../components/CommandPalette";
+import { Schema } from "../../components/Schema";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,15 +48,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Akhilesh Waghmare",
+    "url": "https://akhileshw.xyz",
+    "jobTitle": "Frontend Developer",
+    "sameAs": [
+      "https://github.com/akhilesh-w",
+      "https://twitter.com/akhileshw_xyz",
+    ],
+  };
+
   return (
     <html lang="en">
       <body className={`${inter.className} min-h-screen transition-colors duration-300`}>
+        <Schema data={personSchema} />
         <Providers>
           <div className="bg-white dark:bg-gray-900 text-neutral-800 dark:text-neutral-400 min-h-screen transition-colors duration-300">
             {children}
           </div>
           <SpeedInsights />
           <Analytics />
+          <ConsoleSignature />
+          <CommandPalette />
         </Providers>
       </body>
     </html>
