@@ -23,6 +23,8 @@ export default function Now() {
 
           <p className="appear stagger-5">Mainly building software for the web using modern tools and frameworks like <Linker href="https://nextjs.org/">Next.js</Linker> and <Linker href="https://tailwindcss.com/">Tailwind</Linker>.</p>
 
+          <p className="appear stagger-5">• Open to contract/freelance work or the right full-time role where I truly believe in the product and can make a real impact.</p>
+
           <p className="appear stagger-5">• Currently reading 'Metamorphosis' by 'Franz Kafka'</p>
           <p className="appear stagger-5">• What else?</p>
           <p className="appear stagger-5">Have become a nerd about Formula 1 🏎 after watching <Linker href="https://www.netflix.com/in/title/80204890">Drive to Survive</Linker> on Netflix. Have done so much research about terms, historical events, the cars and obviously the players!</p>

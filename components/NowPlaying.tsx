@@ -11,27 +11,49 @@ interface NowPlayingData {
     albumImageUrl?: string;
     songUrl?: string;
     lastPlayedAt?: string;
+    progressMs?: number;
+    durationMs?: number;
 }
 
 export default function NowPlaying() {
     const [data, setData] = useState<NowPlayingData | null>(null);
 
     useEffect(() => {
+        let timeoutId: NodeJS.Timeout;
+
         const fetchNowPlaying = async () => {
             try {
                 const res = await fetch('/api/now-playing');
                 const json = await res.json();
                 setData(json);
+
+                // Default 5s polling for snappy updates on manual changes
+                let delay = 5000;
+
+                if (json.isPlaying && typeof json.progressMs === 'number' && typeof json.durationMs === 'number') {
+                    const remaining = json.durationMs - json.progressMs;
+                    // If the song is ending soon (within the next 5s), schedule the next fetch 
+                    // exactly when it ends (plus a small buffer) to catch the transition immediately.
+                    // Otherwise, stick to 5s to check for manual skips.
+                    if (remaining < 5000) {
+                        delay = remaining + 1000;
+                    }
+                }
+
+                // Safety clamp
+                if (delay < 1000) delay = 1000;
+
+                timeoutId = setTimeout(fetchNowPlaying, delay);
             } catch (error) {
                 console.error('Failed to fetch now playing:', error);
                 setData({ isPlaying: false });
+                timeoutId = setTimeout(fetchNowPlaying, 5000);
             }
         };
 
         fetchNowPlaying();
-        const interval = setInterval(fetchNowPlaying, 30000);
 
-        return () => clearInterval(interval);
+        return () => clearTimeout(timeoutId);
     }, []);
 
     const formatLastPlayed = (dateStr?: string) => {

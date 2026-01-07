@@ -27,9 +27,7 @@ personal website
 - [ ] Related Posts - Show similar content at end of articles
 - [ ] Social Share Buttons - Easy sharing to Twitter/X, LinkedIn
 - [ ] Comments System - Giscus (GitHub Discussions) or similar
-- [ ] Keyboard Navigation - Full keyboard accessibility
 - [ ] Open Graph Images - Dynamic social preview images
 - [x] Structured Data - JSON-LD for rich search results
 - [ ] Commit Conventions - Conventional commits setup
-- [ ] TypeScript Strict Mode - Enable full strict checking
 - [ ] Dependabot - Automated dependency updates

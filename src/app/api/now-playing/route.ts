@@ -62,6 +62,8 @@ export async function GET() {
                 album: currentSong.item.album.name,
                 albumImageUrl: currentSong.item.album.images[0]?.url,
                 songUrl: currentSong.item.external_urls.spotify,
+                progressMs: currentSong.progress_ms,
+                durationMs: currentSong.item.duration_ms,
             });
         }
 

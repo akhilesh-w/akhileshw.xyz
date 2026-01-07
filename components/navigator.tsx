@@ -29,7 +29,7 @@ const Navigator = () => (
       <NavigatorItem label='logs' href='/logs' />
       {/* <NavigatorItem label='resume' href='/resume.pdf' /> */}
       <NavigatorItem label='uses' href='/uses' />
-      <NavigatorItem label='notes' href='http://notes.akhileshw.xyz/' />
+      {/* <NavigatorItem label='notes' href='http://notes.akhileshw.xyz/' /> */}
       <div className="flex items-center pl-2">
         <ThemeToggle />
       </div>
