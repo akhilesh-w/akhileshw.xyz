@@ -19,6 +19,16 @@ const projects = [
     description: 'a weird little garden of all the random sites I’ve built over time.',
     link: 'https://sites.akhileshw.xyz',
   },
+  {
+    name: 'gemini-design-plugin:',
+    description: 'a gemini cli extension for rapid ui design iteration.',
+    link: 'https://github.com/akhilesh-w/gemini-design-plugin',
+  },
+  {
+    name: 'epoch:',
+    description: 'a goal/task tracking app and chrome extension.',
+    link: 'https://github.com/akhilesh-w/epoch',
+  },
 ];
 
 export default function ProjectsSection() {
