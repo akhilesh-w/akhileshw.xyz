@@ -63,6 +63,18 @@ const config: Config = {
             'code::after': {
               content: '""',
             },
+            blockquote: {
+              quotes: "none",
+              fontStyle: 'italic',
+              color: 'inherit',
+              borderLeftColor: 'rgb(var(--foreground-rgb) / 0.1)',
+            },
+            'blockquote p:first-of-type::before': {
+              content: 'none',
+            },
+            'blockquote p:last-of-type::after': {
+              content: 'none',
+            },
             pre: {
               backgroundColor: '#1f2937',
               color: '#f8f8f2',

@@ -164,20 +164,37 @@ p {
 }
 
 .prose {
-  --tw-prose-body: theme('colors.gray.200');
+  --tw-prose-body: theme('colors.neutral.700');
+  --tw-prose-headings: theme('colors.neutral.900');
+  --tw-prose-bold: theme('colors.neutral.900');
+  --tw-prose-counters: theme('colors.neutral.500');
+  --tw-prose-bullets: theme('colors.neutral.500');
+  --tw-prose-hr: theme('colors.neutral.200');
+  --tw-prose-quotes: theme('colors.neutral.800');
+  --tw-prose-quote-borders: theme('colors.neutral.200');
+  --tw-prose-captions: theme('colors.neutral.500');
+  --tw-prose-code: theme('colors.neutral.900');
+  --tw-prose-pre-code: theme('colors.neutral.200');
+  --tw-prose-pre-bg: theme('colors.neutral.800');
+  --tw-prose-th-borders: theme('colors.neutral.300');
+  --tw-prose-td-borders: theme('colors.neutral.200');
+}
+
+.dark .prose, .prose-invert {
+  --tw-prose-body: theme('colors.neutral.300');
   --tw-prose-headings: theme('colors.white');
   --tw-prose-bold: theme('colors.white');
-  --tw-prose-counters: theme('colors.gray.400');
-  --tw-prose-bullets: theme('colors.gray.400');
-  --tw-prose-hr: theme('colors.gray.700');
-  --tw-prose-quotes: theme('colors.gray.200');
-  --tw-prose-quote-borders: theme('colors.gray.700');
-  --tw-prose-captions: theme('colors.gray.400');
+  --tw-prose-counters: theme('colors.neutral.400');
+  --tw-prose-bullets: theme('colors.neutral.400');
+  --tw-prose-hr: theme('colors.neutral.700');
+  --tw-prose-quotes: theme('colors.neutral.200');
+  --tw-prose-quote-borders: theme('colors.neutral.700');
+  --tw-prose-captions: theme('colors.neutral.400');
   --tw-prose-code: theme('colors.white');
-  --tw-prose-pre-code: theme('colors.gray.200');
-  --tw-prose-pre-bg: theme('colors.gray.800');
-  --tw-prose-th-borders: theme('colors.gray.700');
-  --tw-prose-td-borders: theme('colors.gray.700');
+  --tw-prose-pre-code: theme('colors.neutral.200');
+  --tw-prose-pre-bg: theme('colors.neutral.800');
+  --tw-prose-th-borders: theme('colors.neutral.700');
+  --tw-prose-td-borders: theme('colors.neutral.700');
 }
 
 .prose-links a {
