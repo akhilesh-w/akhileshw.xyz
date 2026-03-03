@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
-import { getAllPostSlugs } from '../utils/api'
+import { getAllPosts } from '../utils/api'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const siteUrl = 'https://akhileshw.xyz'
 
     // Static routes
@@ -21,9 +21,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
 
     // Blog posts
-    const posts = getAllPostSlugs().map((post) => ({
+    const allPosts = await getAllPosts()
+    const posts = allPosts.map((post) => ({
         url: `${siteUrl}/blog/${post.slug}`,
-        lastModified: new Date(),
+        lastModified: post.frontmatter.date ? new Date(post.frontmatter.date) : new Date(),
         changeFrequency: 'weekly' as const,
         priority: 0.6,
     }))
