@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import MainLayout from "../../../components/main-layout";
-import Linker from "../../../components/linker";
+import MainLayout from "@/components/main-layout";
+import Linker from "@/components/linker";
 
 export const metadata: Metadata = {
   title: "Uses",

@@ -1,4 +1,4 @@
-import MainLayout from "../../../components/main-layout";
+import MainLayout from "@/components/main-layout";
 import Link from "next/link";
 import { getAllPosts } from "../../utils/api";
 

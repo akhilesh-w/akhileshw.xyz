@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { signGuestbook } from "../src/app/guestbook/actions";
+import { signGuestbook } from "@/app/guestbook/actions";
 
 export default function GuestbookForm() {
     const [isSubmitting, setIsSubmitting] = useState(false);

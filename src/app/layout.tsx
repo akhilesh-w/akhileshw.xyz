@@ -3,10 +3,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
-import { Providers } from "../../components/Providers";
-import { ConsoleSignature } from "../../components/ConsoleSignature";
-import CommandPalette from "../../components/CommandPalette";
-import { Schema } from "../../components/Schema";
+import { Providers } from "@/components/Providers";
+import { ConsoleSignature } from "@/components/ConsoleSignature";
+import CommandPalette from "@/components/CommandPalette";
+import { Schema } from "@/components/Schema";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -1,4 +1,4 @@
-import MainLayout from "../../../components/main-layout";
+import MainLayout from "@/components/main-layout";
 import Link from "next/link";
 
 const NavigatorItem = ({ label, href }: { label: string; href: string }) => (

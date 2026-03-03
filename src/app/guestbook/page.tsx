@@ -1,6 +1,6 @@
-import MainLayout from "../../../components/main-layout";
+import MainLayout from "@/components/main-layout";
 import { getGuestbookMessages } from "./actions";
-import GuestbookForm from "../../../components/GuestbookForm";
+import GuestbookForm from "@/components/GuestbookForm";
 
 export const dynamic = "force-dynamic";
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import MainLayout from "../../../components/main-layout";
+import MainLayout from "@/components/main-layout";
 import Link from "next/link";
 import { logs } from "./data";
 

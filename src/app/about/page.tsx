@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import React, { Children } from "react";
-import MainLayout from "../../../components/main-layout";
-import Linker from "../../../components/linker";
-import ProjectsSection from '../../../components/ProjectsSection';
+import MainLayout from "@/components/main-layout";
+import Linker from "@/components/linker";
+import ProjectsSection from '@/components/ProjectsSection';
 
 export const metadata: Metadata = {}
 
