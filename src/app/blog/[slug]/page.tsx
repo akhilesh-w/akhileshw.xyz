@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { getAllPostSlugs, getPostBySlug } from "../../../utils/api";
 import BlogLayout from "../../../../components/BlogLayout";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -6,6 +7,22 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import rehypeHighlight from "rehype-highlight";
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const post = await getPostBySlug(params.slug);
+  const { title, description } = post.frontmatter;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      url: `https://akhileshw.xyz/blog/${params.slug}`,
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const posts = getAllPostSlugs();
