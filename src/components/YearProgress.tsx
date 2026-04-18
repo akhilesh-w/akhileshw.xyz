@@ -2,25 +2,26 @@
 
 import { useEffect, useState } from "react";
 
+function getYearProgress() {
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 1);
+    const end = new Date(now.getFullYear() + 1, 0, 1);
+    const total = end.getTime() - start.getTime();
+    const elapsed = now.getTime() - start.getTime();
+
+    return {
+        progress: (elapsed / total) * 100,
+        daysLeft: Math.ceil((end.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)),
+        year: now.getFullYear(),
+    };
+}
+
 export const YearProgress = () => {
-    const [progress, setProgress] = useState(0);
-    const [daysLeft, setDaysLeft] = useState(0);
-    const [year, setYear] = useState(new Date().getFullYear());
+    const [{ progress, daysLeft, year }, setYearProgress] = useState(getYearProgress);
 
     useEffect(() => {
         const calculateProgress = () => {
-            const now = new Date();
-            const start = new Date(now.getFullYear(), 0, 1);
-            const end = new Date(now.getFullYear() + 1, 0, 1);
-            const total = end.getTime() - start.getTime();
-            const elapsed = now.getTime() - start.getTime();
-            const percentage = (elapsed / total) * 100;
-
-            setProgress(percentage);
-            setYear(now.getFullYear());
-
-            const diff = end.getTime() - now.getTime();
-            setDaysLeft(Math.ceil(diff / (1000 * 60 * 60 * 24)));
+            setYearProgress(getYearProgress());
         };
 
         calculateProgress();

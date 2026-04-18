@@ -1,6 +1,11 @@
+import { Metadata } from "next";
 import MainLayout from "@/components/main-layout";
 import Link from "next/link";
 import { getAllPosts } from "../../utils/api";
+
+export const metadata: Metadata = {
+  title: "Blog",
+};
 
 export default async function BlogIndex() {
   const posts = await getAllPosts();

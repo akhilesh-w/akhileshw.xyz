@@ -1,13 +1,16 @@
 import { getAllPosts } from "@/utils/api";
 import { NextResponse } from "next/server";
+import { staticSearchItems, type SearchIndexItem } from "@/utils/site";
 
 export async function GET() {
     const posts = await getAllPosts();
-    const searchIndex = posts.map((post) => ({
+    const postItems: SearchIndexItem[] = posts.map((post) => ({
         title: post.frontmatter.title,
-        slug: post.slug,
+        href: `/blog/${post.slug}`,
+        type: "post",
+        description: post.frontmatter.description,
         date: post.frontmatter.date,
     }));
 
-    return NextResponse.json(searchIndex);
+    return NextResponse.json([...staticSearchItems, ...postItems]);
 }

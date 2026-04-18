@@ -1,8 +1,9 @@
 import { Metadata } from "next";
-import React, { Children } from "react";
 import MainLayout from "@/components/main-layout";
 
-export const metadata: Metadata = {}
+export const metadata: Metadata = {
+  title: "Bookshelf",
+}
 
 export default function Bookshelf() {
   return (

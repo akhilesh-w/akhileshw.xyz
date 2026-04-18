@@ -1,8 +1,12 @@
+import { Metadata } from "next";
 import MainLayout from "@/components/main-layout";
 import { getGuestbookMessages } from "./actions";
 import GuestbookForm from "@/components/GuestbookForm";
 
 export const dynamic = "force-dynamic";
+export const metadata: Metadata = {
+    title: "Guestbook",
+};
 
 export default async function Guestbook() {
     const messages = await getGuestbookMessages();

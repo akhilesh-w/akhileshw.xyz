@@ -7,21 +7,22 @@ import { Providers } from "@/components/Providers";
 import { ConsoleSignature } from "@/components/ConsoleSignature";
 import CommandPalette from "@/components/CommandPalette";
 import { Schema } from "@/components/Schema";
+import { siteConfig } from "@/utils/site";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://akhileshw.xyz'),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Akhilesh Waghmare",
-    template: '%s • Akhilesh Waghmare',
+    default: siteConfig.name,
+    template: `%s • ${siteConfig.name}`,
   },
-  description: "Front-end Developer",
+  description: siteConfig.description,
   openGraph: {
-    title: "Akhilesh Waghmare",
-    description: "Frontend Developer",
-    url: "https://akhileshw.xyz",
-    siteName: "Akhilesh Waghmare",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
     locale: 'en_IN',
     type: 'website',
   },
@@ -51,8 +52,8 @@ export default function RootLayout({
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Akhilesh Waghmare",
-    "url": "https://akhileshw.xyz",
+    "name": siteConfig.name,
+    "url": siteConfig.url,
     "jobTitle": "Frontend Developer",
     "sameAs": [
       "https://github.com/akhilesh-w",

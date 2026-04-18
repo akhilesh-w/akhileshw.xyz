@@ -18,10 +18,21 @@ const Footer = () => (
 
     <div className="flex flex-row items-center text-xs opacity-40 pt-6 gap-3">
       <Clock />
-      <a title='source code' href='https://github.com/akhilesh-w/akhileshw.xyz'>
+      <a
+        title='source code'
+        href='https://github.com/akhilesh-w/akhileshw.xyz'
+        target="_blank"
+        rel="noopener noreferrer"
+        className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-neutral-600 dark:focus-visible:ring-offset-gray-900"
+      >
         Source
       </a>
-      <Link href="/rss" title="RSS Feed">
+      <Link
+        href="/rss"
+        title="RSS Feed"
+        aria-label="RSS feed"
+        className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-neutral-600 dark:focus-visible:ring-offset-gray-900"
+      >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
           <path d="M5 3a1 1 0 000 2c5.523 0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z" />
           <path d="M4 9a1 1 0 011-1 7 7 0 017 7 1 1 0 11-2 0 5 5 0 00-5-5 1 1 0 01-1-1zM3 15a2 2 0 114 0 2 2 0 01-4 0z" />

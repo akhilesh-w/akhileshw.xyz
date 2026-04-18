@@ -23,7 +23,7 @@ const Navigator = () => (
       </div> */}
     </div>
 
-    <nav className='flex gap-2 sm:gap-4 justify-end items-center flex-nowrap'>
+    <nav className='flex gap-x-2 gap-y-1 sm:gap-x-4 justify-end items-center flex-wrap'>
       <NavigatorItem label='about' href='/about' />
       <NavigatorItem label='now' href='/now' />
       <NavigatorItem label='blog' href='/blog' />

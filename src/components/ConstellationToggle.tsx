@@ -146,7 +146,7 @@ export function SnowToggle() {
       <button
         onClick={() => setActive((s) => !s)}
         aria-label="Toggle constellation"
-        className={`transition-all duration-300 focus:outline-none ${
+        className={`transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-neutral-600 dark:focus-visible:ring-offset-gray-900 motion-reduce:transition-none ${
           active ? "opacity-100" : "opacity-40 hover:opacity-100"
         }`}
       >

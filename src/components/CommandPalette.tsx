@@ -5,15 +5,17 @@ import { useRouter } from 'next/navigation';
 
 interface SearchItem {
     title: string;
-    slug: string;
-    date: string;
+    href: string;
+    type: "page" | "post";
+    description?: string;
+    date?: string;
 }
 
 export default function CommandPalette() {
     const [isOpen, setIsOpen] = useState(false);
     const [query, setQuery] = useState('');
-    const [results, setResults] = useState<SearchItem[]>([]);
     const [items, setItems] = useState<SearchItem[]>([]);
+    const [visibleItems, setVisibleItems] = useState<SearchItem[]>([]);
     const [selectedIndex, setSelectedIndex] = useState(0);
     const router = useRouter();
     const inputRef = useRef<HTMLInputElement>(null);
@@ -56,37 +58,47 @@ export default function CommandPalette() {
             inputRef.current.focus();
         } else {
             setQuery('');
-            setResults([]);
+            setVisibleItems([]);
+            setSelectedIndex(0);
         }
     }, [isOpen]);
 
     useEffect(() => {
         if (query.trim() === '') {
-            setResults([]);
+            setVisibleItems(items.slice(0, 8));
+            setSelectedIndex(0);
             return;
         }
+
+        const lowerQuery = query.toLowerCase();
         const filtered = items.filter((item) =>
-            item.title.toLowerCase().includes(query.toLowerCase())
-        ).slice(0, 5);
-        setResults(filtered);
+            item.title.toLowerCase().includes(lowerQuery) ||
+            item.description?.toLowerCase().includes(lowerQuery)
+        ).slice(0, 8);
+
+        setVisibleItems(filtered);
         setSelectedIndex(0);
     }, [query, items]);
 
     const handleSelect = (item: SearchItem) => {
-        router.push(`/blog/${item.slug}`);
+        router.push(item.href);
         setIsOpen(false);
     };
 
-    const handleKeyDown = (e: React.KeyboardEvent) => {
+    const handleInputKeyDown = (e: React.KeyboardEvent) => {
+        if (visibleItems.length === 0) {
+            return;
+        }
+
         if (e.key === 'ArrowDown') {
             e.preventDefault();
-            setSelectedIndex((prev) => (prev + 1) % results.length);
+            setSelectedIndex((prev) => (prev + 1) % visibleItems.length);
         } else if (e.key === 'ArrowUp') {
             e.preventDefault();
-            setSelectedIndex((prev) => (prev - 1 + results.length) % results.length);
+            setSelectedIndex((prev) => (prev - 1 + visibleItems.length) % visibleItems.length);
         } else if (e.key === 'Enter') {
-            if (results[selectedIndex]) {
-                handleSelect(results[selectedIndex]);
+            if (visibleItems[selectedIndex]) {
+                handleSelect(visibleItems[selectedIndex]);
             }
         }
     };
@@ -94,7 +106,12 @@ export default function CommandPalette() {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-[100] flex items-start justify-center pt-[20vh] bg-black/50 backdrop-blur-sm p-4 animate-in fade-in duration-200">
+        <div
+            className="fixed inset-0 z-[100] flex items-start justify-center pt-[20vh] bg-black/50 backdrop-blur-sm p-4 animate-in fade-in duration-200"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site search"
+        >
             <div
                 className="w-full max-w-lg bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
@@ -104,33 +121,38 @@ export default function CommandPalette() {
                         ref={inputRef}
                         type="text"
                         className="w-full bg-transparent border-none outline-none text-neutral-200 placeholder-neutral-500 text-lg"
-                        placeholder="Search blog posts..."
+                        placeholder="Search posts and pages..."
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
-                        onKeyDown={handleKeyDown}
+                        onKeyDown={handleInputKeyDown}
                     />
                 </div>
 
-                {results.length > 0 && (
+                {visibleItems.length > 0 && (
                     <div className="p-2">
-                        {results.map((item, index) => (
-                            <div
-                                key={item.slug}
-                                className={`flex items-center justify-between p-3 rounded-lg cursor-pointer transition-colors ${index === selectedIndex ? 'bg-neutral-800 text-neutral-100' : 'text-neutral-400 hover:bg-neutral-800/50'
+                        {visibleItems.map((item, index) => (
+                            <button
+                                type="button"
+                                key={item.href}
+                                className={`flex w-full items-center justify-between gap-4 p-3 rounded-lg text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 ${index === selectedIndex ? 'bg-neutral-800 text-neutral-100' : 'text-neutral-400 hover:bg-neutral-800/50'
                                     }`}
                                 onClick={() => handleSelect(item)}
                             >
                                 <div className="flex flex-col">
                                     <span className="font-medium">{item.title}</span>
-                                    <span className="text-xs opacity-50">{new Date(item.date).toLocaleDateString()}</span>
+                                    <span className="text-xs opacity-50">
+                                        {item.description ?? (item.date ? new Date(item.date).toLocaleDateString() : item.type)}
+                                    </span>
                                 </div>
-                                <span className="text-xs opacity-30">Enter</span>
-                            </div>
+                                <span className="text-xs uppercase tracking-widest opacity-30">
+                                    {item.type}
+                                </span>
+                            </button>
                         ))}
                     </div>
                 )}
 
-                {query && results.length === 0 && (
+                {query && visibleItems.length === 0 && (
                     <div className="p-8 text-center text-neutral-500">
                         No results found for "{query}"
                     </div>

@@ -2,7 +2,9 @@ import { Metadata } from "next";
 import Linker from "@/components/linker";
 import MainLayout from "@/components/main-layout";
 
-export const metadata: Metadata = {};
+export const metadata: Metadata = {
+  title: "Now",
+};
 
 export default function Now() {
   return (

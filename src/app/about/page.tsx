@@ -1,10 +1,11 @@
 import { Metadata } from "next";
-import React, { Children } from "react";
 import MainLayout from "@/components/main-layout";
 import Linker from "@/components/linker";
 import ProjectsSection from '@/components/ProjectsSection';
 
-export const metadata: Metadata = {}
+export const metadata: Metadata = {
+  title: "About",
+}
 
 export default function About() {
   return (

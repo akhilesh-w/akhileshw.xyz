@@ -2,17 +2,13 @@ import { Metadata } from "next";
 import MainLayout from "@/components/main-layout";
 import { Photo } from "@/components/photo";
 import me from "../../public/me.jpg";
-import { getAllPosts } from "../utils/api";
-import Link from "next/link";
 import Linker from "@/components/linker";
 import NowPlaying from "@/components/NowPlaying";
 import { YearProgress } from "@/components/YearProgress";
 
 export const metadata: Metadata = {}
 
-export default async function Home() {
-  const posts = await getAllPosts();
-
+export default function Home() {
   return (
     <MainLayout>
       <div className="mb-6 appear stagger-1">

@@ -1,20 +1,21 @@
 import { MetadataRoute } from 'next'
 import { getAllPosts } from '../utils/api'
+import { siteConfig } from '@/utils/site'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const siteUrl = 'https://akhileshw.xyz'
-
     // Static routes
     const routes = [
         '',
         '/about',
         '/now',
         '/blog',
+        '/logs',
         '/uses',
         '/bookshelf',
         '/guestbook',
+        '/donate',
     ].map((route) => ({
-        url: `${siteUrl}${route}`,
+        url: `${siteConfig.url}${route}`,
         lastModified: new Date(),
         changeFrequency: 'monthly' as const,
         priority: route === '' ? 1 : 0.8,
@@ -23,7 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Blog posts
     const allPosts = await getAllPosts()
     const posts = allPosts.map((post) => ({
-        url: `${siteUrl}/blog/${post.slug}`,
+        url: `${siteConfig.url}/blog/${post.slug}`,
         lastModified: post.frontmatter.date ? new Date(post.frontmatter.date) : new Date(),
         changeFrequency: 'weekly' as const,
         priority: 0.6,

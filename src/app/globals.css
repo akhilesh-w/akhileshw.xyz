@@ -86,6 +86,20 @@ p {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .appear {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .wiggle:active,
+  .spin-hover:hover img {
+    animation: none;
+  }
+}
+
 @keyframes wiggle {
 
   0%,
