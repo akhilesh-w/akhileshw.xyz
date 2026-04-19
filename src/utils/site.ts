@@ -15,7 +15,7 @@ export type SearchIndexItem = {
 export const staticSearchItems: SearchIndexItem[] = [
   { title: "Home", href: "/", type: "page", description: "Homepage" },
   { title: "About", href: "/about", type: "page", description: "About Akhilesh" },
-  { title: "Now", href: "/now", type: "page", description: "What Akhilesh is focused on right now" },
+  // { title: "Now", href: "/now", type: "page", description: "What Akhilesh is focused on right now" },
   { title: "Blog", href: "/blog", type: "page", description: "Long-form writing and notes" },
   { title: "Logs", href: "/logs", type: "page", description: "Books, bookmarks, articles, and videos" },
   { title: "Uses", href: "/uses", type: "page", description: "Hardware and software Akhilesh uses" },

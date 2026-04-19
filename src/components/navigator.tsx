@@ -25,7 +25,7 @@ const Navigator = () => (
 
     <nav className='flex gap-x-2 gap-y-1 sm:gap-x-4 justify-end items-center flex-wrap'>
       <NavigatorItem label='about' href='/about' />
-      <NavigatorItem label='now' href='/now' />
+      {/* <NavigatorItem label='now' href='/now' /> */}
       <NavigatorItem label='blog' href='/blog' />
       <NavigatorItem label='logs' href='/logs' />
       {/* <NavigatorItem label='resume' href='/resume.pdf' /> */}

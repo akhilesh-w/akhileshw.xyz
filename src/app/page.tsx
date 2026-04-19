@@ -20,7 +20,7 @@ export default function Home() {
         <p className="appear stagger-3">I'm a generalist on a journey to be a polymath, stitching together software, stories, systems and soul.</p>
 
         <p className="appear stagger-4">
-          If this is your first time visiting my site, you might want to start with my <Linker href="/about">about</Linker> page for some more details about who I am and what I do, or my <Linker href="/now">now</Linker> page to see what I'm up to and what's on my mind at the moment.
+          If this is your first time visiting my site, you might want to start with my <Linker href="/about">about</Linker> page for some more details about who I am and what I do.
         </p>
 
       </section>
