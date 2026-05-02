@@ -7,19 +7,28 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import rehypeHighlight from "rehype-highlight";
+import { siteConfig } from "@/utils/site";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const post = await getPostBySlug(params.slug);
   const { title, description } = post.frontmatter;
+  const safeDescription = typeof description === "string" ? description : undefined;
 
   return {
     title,
-    description,
+    description: safeDescription,
     openGraph: {
       title,
-      description,
+      description: safeDescription,
       type: "article",
-      url: `https://akhileshw.xyz/blog/${params.slug}`,
+      url: `${siteConfig.url}/blog/${params.slug}`,
+      images: [{ url: siteConfig.ogImage, alt: title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: safeDescription,
+      images: [siteConfig.ogImage],
     },
   };
 }

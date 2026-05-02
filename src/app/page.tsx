@@ -5,12 +5,27 @@ import me from "../../public/me.jpg";
 import Linker from "@/components/linker";
 import NowPlaying from "@/components/NowPlaying";
 import { YearProgress } from "@/components/YearProgress";
+import { siteConfig } from "@/utils/site";
 
-export const metadata: Metadata = {}
+export const metadata: Metadata = {
+  description: siteConfig.description,
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    images: [{ url: siteConfig.ogImage, alt: siteConfig.name }],
+  },
+  twitter: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
+};
 
 export default function Home() {
   return (
     <MainLayout>
+      <h1 className="sr-only">{siteConfig.name}</h1>
       <div className="mb-6 appear stagger-1">
         <Photo src={me} />
       </div>

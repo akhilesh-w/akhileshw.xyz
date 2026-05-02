@@ -7,6 +7,12 @@ function ConstellationCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    );
+
+    if (prefersReducedMotion.matches) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -40,6 +46,7 @@ function ConstellationCanvas() {
     window.addEventListener("mousemove", onMouseMove);
 
     const draw = () => {
+      if (prefersReducedMotion.matches) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       for (const p of particles) {
@@ -116,10 +123,18 @@ function ConstellationCanvas() {
 
     draw();
 
+    const onMotionPreferenceChange = () => {
+      if (prefersReducedMotion.matches) {
+        cancelAnimationFrame(animId);
+      }
+    };
+    prefersReducedMotion.addEventListener("change", onMotionPreferenceChange);
+
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", onMouseMove);
+      prefersReducedMotion.removeEventListener("change", onMotionPreferenceChange);
     };
   }, []);
 
@@ -134,19 +149,41 @@ function ConstellationCanvas() {
 export function SnowToggle() {
   const [mounted, setMounted] = useState(false);
   const [active, setActive] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(mq.matches);
+    const onChange = () => setReducedMotion(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    if (reducedMotion) setActive(false);
+  }, [reducedMotion]);
 
   if (!mounted) return null;
 
   return (
     <>
       <button
-        onClick={() => setActive((s) => !s)}
+        type="button"
+        onClick={() => {
+          if (!reducedMotion) setActive((s) => !s);
+        }}
         aria-label="Toggle constellation"
-        className={`transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-neutral-600 dark:focus-visible:ring-offset-gray-900 motion-reduce:transition-none ${
+        disabled={reducedMotion}
+        title={
+          reducedMotion
+            ? "Constellation disabled when reduced motion is on"
+            : undefined
+        }
+        className={`transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-neutral-600 dark:focus-visible:ring-offset-gray-900 motion-reduce:transition-none disabled:opacity-25 disabled:pointer-events-none disabled:cursor-not-allowed ${
           active ? "opacity-100" : "opacity-40 hover:opacity-100"
         }`}
       >

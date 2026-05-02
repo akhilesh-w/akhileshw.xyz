@@ -27,6 +27,7 @@ export default function Globe() {
   const phiRef = useRef(0);
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
   const [visitorLocation, setVisitorLocation] = useState<{
     latitude: number;
     longitude: number;
@@ -34,6 +35,14 @@ export default function Globe() {
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduceMotion(mq.matches);
+    const onChange = () => setReduceMotion(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
   }, []);
 
   useEffect(() => {
@@ -80,7 +89,9 @@ export default function Globe() {
           ]
         : [],
       onRender: (state) => {
-        phiRef.current += 0.003;
+        if (!reduceMotion) {
+          phiRef.current += 0.003;
+        }
         state.phi = phiRef.current;
       },
     });
@@ -88,7 +99,7 @@ export default function Globe() {
     return () => {
       globe.destroy();
     };
-  }, [resolvedTheme, visitorLocation, mounted]);
+  }, [resolvedTheme, visitorLocation, mounted, reduceMotion]);
 
   if (!mounted) {
     return (

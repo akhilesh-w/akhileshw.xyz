@@ -1,7 +1,11 @@
 export const siteConfig = {
   name: "Akhilesh Waghmare",
   url: "https://akhileshw.xyz",
-  description: "Front-end Developer",
+  /** Default meta description and social preview text */
+  description:
+    "Coder, storyteller, explorer of ideas — stitching together software, stories, systems, and curiosity.",
+  /** Shared Open Graph / Twitter preview (under `public/`) */
+  ogImage: "/me.jpg",
 } as const;
 
 export type SearchIndexItem = {

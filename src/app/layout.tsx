@@ -25,6 +25,18 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: 'en_IN',
     type: 'website',
+    images: [
+      {
+        url: siteConfig.ogImage,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
   },
   robots: {
     index: true,
@@ -54,10 +66,19 @@ export default function RootLayout({
     "@type": "Person",
     "name": siteConfig.name,
     "url": siteConfig.url,
-    "jobTitle": "Frontend Developer",
+    "jobTitle": "Game Producer",
     "sameAs": [
       "https://github.com/akhilesh-w",
-      "https://twitter.com/akhileshw_xyz",
+      "https://twitter.com/theakhileshw",
+      "https://farcaster.xyz/akhileshw",
+      "https://bsky.app/profile/akhileshw.bsky.social",
+      "https://universeodon.com/@akhileshw",
+      "https://www.linkedin.com/in/akhilesh-w/",
+      "https://github.com/akhilesh-w",
+      "https://peerlist.io/akhileshw",
+      "https://www.figma.com/@akhileshw",
+      "https://akhileshw.substack.com/",
+      "https://keybase.io/theakhileshw",
     ],
   };
 
