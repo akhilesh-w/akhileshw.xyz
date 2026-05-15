@@ -25,7 +25,9 @@ function ConstellationCanvas() {
     resize();
     window.addEventListener("resize", resize);
 
-    const particles = Array.from({ length: 80 }, () => ({
+    const area = window.innerWidth * window.innerHeight;
+    const count = Math.round(Math.max(20, area / 12000));
+    const particles = Array.from({ length: count }, () => ({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
       vx: (Math.random() - 0.5) * 0.6,
