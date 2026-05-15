@@ -26,19 +26,16 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <MainLayout>
-      <h1 className="sr-only">{siteConfig.name}</h1>
       <div className="mb-6 appear stagger-1">
         <Photo src={me} />
       </div>
 
-      <section className="mb-10 space-y-4 leading-relaxed">
-        <p className="appear stagger-2">Hey, I'm <strong>Akhilesh</strong>, part coder, part storyteller, full-time explorer of ideas.</p>
-        <p className="appear stagger-3">I'm a generalist on a journey to be a polymath, stitching together software, stories, systems and soul.</p>
-
-        <p className="appear stagger-4">
-          If this is your first time visiting my site, you might want to start with my <Linker href="/about">about</Linker> page for some more details about who I am and what I do.
+      <section className="mb-10 space-y-3 leading-relaxed">
+        <h1 className="text-2xl font-semibold tracking-tight appear stagger-2">Akhilesh Waghmare</h1>
+        <p className="text-neutral-500 dark:text-neutral-400 appear stagger-3">part coder, part storyteller, full-time explorer of ideas.</p>
+        <p className="appear stagger-4 pt-1">
+          I'm a generalist on a journey to be a polymath, stitching together software, stories, systems and soul. If this is your first time here, the <Linker href="/about">about</Linker> page is a good place to start.
         </p>
-
       </section>
 
       {/* Recent posts */}
