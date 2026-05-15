@@ -32,11 +32,9 @@ export default function Home() {
       </div>
 
       <section className="mb-10 space-y-4 leading-relaxed">
-        <p className="appear stagger-2">Hey, I'm <strong>Akhilesh</strong>, part coder, part storyteller, full-time explorer of ideas.</p>
-        <p className="appear stagger-3">I'm a generalist on a journey to be a polymath, stitching together software, stories, systems and soul.</p>
-        <p className="appear stagger-4">
-          If this is your first time visiting my site, you might want to start with my <Linker href="/about">about</Linker> page for some more details about who I am and what I do.
-        </p>
+        <p className="appear stagger-2">Hey, I'm <strong>Akhilesh</strong>, coder, occasional writer, full-time rabbit-hole enthusiast.</p>
+        <p className="appear stagger-3">Curious about most things: software, stories, the future, how people think.</p>
+        <p className="appear stagger-4">This site is where I think out loud. Glad you're here.</p>
       </section>
 
       {/* Recent posts */}
