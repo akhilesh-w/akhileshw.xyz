@@ -75,6 +75,14 @@ p {
     animation-delay: 0.5s;
   }
 
+  .stagger-6 {
+    animation-delay: 0.65s;
+  }
+
+  .stagger-7 {
+    animation-delay: 0.8s;
+  }
+
   /* Wiggle Animation for Header Easter Egg */
   .wiggle:active {
     animation: wiggle 0.3s ease-in-out;

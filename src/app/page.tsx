@@ -5,6 +5,7 @@ import me from "../../public/me.jpg";
 import Linker from "@/components/linker";
 import NowPlaying from "@/components/NowPlaying";
 import { YearProgress } from "@/components/YearProgress";
+import RecentPosts from "@/components/blog";
 import { siteConfig } from "@/utils/site";
 
 export const metadata: Metadata = {
@@ -40,18 +41,23 @@ export default function Home() {
 
       </section>
 
-      {/* Spotify Now Playing */}
+      {/* Recent posts */}
       <section className="mb-10 appear stagger-5">
+        <RecentPosts />
+      </section>
+
+      {/* Spotify Now Playing */}
+      <section className="mb-10 appear stagger-6">
         <NowPlaying />
       </section>
 
       {/* Year in Progress */}
-      <section className="mb-10 appear stagger-5">
+      <section className="mb-10 appear stagger-7">
         <YearProgress />
       </section>
 
       {/* links */}
-      <section className="appear stagger-5">
+      <section className="appear stagger-7">
         <div className="flex flex-wrap gap-2">
           <Linker href="https://twitter.com/theakhileshw">Twitter</Linker>
           <Linker href="https://farcaster.xyz/akhileshw">Farcaster</Linker>

@@ -1,24 +1,35 @@
 import Link from "next/link";
+import { getAllPosts } from "@/utils/api";
 
-const Blogs = ({ name, href, date }: { name: string; href: string; date: string }) => (
-  <Link href={href} as={href} className="flex justify-between">
-    <p className="underline decoration-neutral-600 underline-offset-4 transition-colors focus:decoration-neutral-500 focus:outline-offset-4 hover:decoration-neutral-500">{name}</p>
-    <p>{date}</p>
-  </Link >
-)
+const RecentPosts = async () => {
+  const posts = await getAllPosts();
+  const recent = posts.slice(0, 3);
 
+  return (
+    <div className="flex flex-col gap-3">
+      <h2 className="text-xl font-semibold">Recent writing</h2>
+      {recent.map((post) => (
+        <Link
+          key={post.slug}
+          href={`/blog/${post.slug}`}
+          className="flex justify-between items-baseline gap-4 group"
+        >
+          <p className="underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-4 transition-colors group-hover:decoration-neutral-600 dark:group-hover:decoration-neutral-400 truncate">
+            {post.frontmatter.title}
+          </p>
+          <span className="text-sm text-neutral-400 dark:text-neutral-500 shrink-0">
+            {post.frontmatter.date}
+          </span>
+        </Link>
+      ))}
+      <Link
+        href="/blog"
+        className="text-sm text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors mt-1"
+      >
+        All posts →
+      </Link>
+    </div>
+  );
+};
 
-
-const BlogPage = () => (
-
-  <div className="flex flex-col gap-4">
-    <h2 className="mt-8 text-xl font-semibold">Blogs</h2>
-    <Blogs name="The power of LLMs" href="/blog/The-power-of-LLMs" date="May 2, 2023" />
-    <Blogs name="The writing process for all beginners" href="/blog/the-writing-process-for-all-beginners" date="July 18, 2022" />
-    <Blogs name="Set Your Expectations" href="/blog/set-your-expectations" date="Jan 16, 2022" />
-
-    <a className="underline decoration-neutral-600 underline-offset-4 transition-colors focus:decoration-neutral-500 focus:outline-offset-4 hover:decoration-neutral-500" href="/blog">All posts</a>
-  </div>
-)
-
-export default BlogPage
+export default RecentPosts;
