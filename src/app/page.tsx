@@ -64,7 +64,7 @@ export default function Home() {
       </section>
     </MainLayout>
 
-    <div className="mx-auto max-w-[52rem] px-6 xs:px-0">
+    <div className="mx-auto max-w-[52rem] px-6 xs:px-0 pb-12">
       <Signature />
     </div>
     </>
