@@ -7,6 +7,10 @@ const nextConfig = {
         hostname: 'i.scdn.co',
         pathname: '/image/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'lastfm.freetls.fastly.net',
+      },
     ],
   },
   async rewrites() {

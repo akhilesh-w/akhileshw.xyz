@@ -48,3 +48,8 @@ npm run lint      # ESLint
 
 ### Path Alias
 `@/*` maps to `./src/*` (tsconfig.json)
+
+## Inspiration Sites
+When suggesting design or feature ideas, reference these sites for tone, aesthetic, and interaction patterns:
+- **Mayur Bhoi** — https://www.mayurbhoi.com/ (source: https://github.com/mayur57/mayurbhoi.com) — minimal personal site, animated SVG signature, clean typography
+- **Ram** — https://ramx.in/ (source: https://github.com/ramxcodes/sleek-portfolio) — design and layout inspiration

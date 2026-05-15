@@ -2,110 +2,36 @@ import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
-const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
-const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
-const REFRESH_TOKEN = process.env.SPOTIFY_REFRESH_TOKEN;
-
-const TOKEN_ENDPOINT = 'https://accounts.spotify.com/api/token';
-const NOW_PLAYING_ENDPOINT = 'https://api.spotify.com/v1/me/player/currently-playing';
-const RECENTLY_PLAYED_ENDPOINT = 'https://api.spotify.com/v1/me/player/recently-played?limit=1';
-
-async function getAccessToken() {
-    const response = await fetch(TOKEN_ENDPOINT, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': 'Basic ' + Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64'),
-        },
-        body: new URLSearchParams({
-            grant_type: 'refresh_token',
-            refresh_token: REFRESH_TOKEN || '',
-        }),
-        cache: 'no-store',
-    });
-
-    const data = await response.json();
-    return data;
-}
+const API_KEY = process.env.LASTFM_API_KEY;
+const USERNAME = process.env.LASTFM_USERNAME;
 
 export async function GET() {
     try {
-        const tokenData = await getAccessToken();
-        const access_token = tokenData.access_token;
+        const res = await fetch(
+            `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USERNAME}&api_key=${API_KEY}&format=json&limit=1`,
+            { cache: 'no-store' }
+        );
 
-        if (!access_token) {
-            return NextResponse.json({ isPlaying: false, error: 'Token error' });
-        }
+        if (!res.ok) return NextResponse.json({ isPlaying: false });
 
-        // Fetch currently playing
-        // Fetch currently playing
-        const nowPlayingResponse = await fetch(NOW_PLAYING_ENDPOINT, {
-            headers: { Authorization: `Bearer ${access_token}` },
-            cache: 'no-store',
+        const data = await res.json();
+        const tracks = data?.recenttracks?.track;
+        if (!tracks || tracks.length === 0) return NextResponse.json({ isPlaying: false });
+
+        const track = Array.isArray(tracks) ? tracks[0] : tracks;
+        const isPlaying = track['@attr']?.nowplaying === 'true';
+        const image = track.image?.find((img: { size: string }) => img.size === 'large')?.['#text'];
+
+        return NextResponse.json({
+            isPlaying,
+            title: track.name,
+            artist: track.artist['#text'],
+            album: track.album['#text'],
+            albumImageUrl: image || null,
+            songUrl: track.url,
+            lastPlayedAt: isPlaying ? null : new Date(Number(track.date?.uts) * 1000).toISOString(),
         });
-
-        let currentSong = null;
-        if (nowPlayingResponse.status === 200) {
-            currentSong = await nowPlayingResponse.json();
-        } else if (nowPlayingResponse.status === 204) {
-            // Nothing currently playing
-        } else {
-            // Handle error
-        }
-
-        // 1. If playing, return immediately
-        if (currentSong && currentSong.is_playing && currentSong.item) {
-            return NextResponse.json({
-                isPlaying: true,
-                title: currentSong.item.name,
-                artist: currentSong.item.artists.map((a: { name: string }) => a.name).join(', '),
-                album: currentSong.item.album.name,
-                albumImageUrl: currentSong.item.album.images[0]?.url,
-                songUrl: currentSong.item.external_urls.spotify,
-                progressMs: currentSong.progress_ms,
-                durationMs: currentSong.item.duration_ms,
-            });
-        }
-
-        // 2. If NOT playing but we HAVE a current song (meaning it's paused)
-        if (currentSong && currentSong.item) {
-            return NextResponse.json({
-                isPlaying: false,
-                title: currentSong.item.name,
-                artist: currentSong.item.artists.map((a: { name: string }) => a.name).join(', '),
-                album: currentSong.item.album.name,
-                albumImageUrl: currentSong.item.album.images[0]?.url,
-                songUrl: currentSong.item.external_urls.spotify,
-                lastPlayedAt: new Date(currentSong.timestamp).toISOString(),
-            });
-        }
-
-        // 3. Fallback to recently played
-        const recentlyPlayedResponse = await fetch(RECENTLY_PLAYED_ENDPOINT, {
-            headers: { Authorization: `Bearer ${access_token}` },
-            cache: 'no-store',
-        });
-
-        if (recentlyPlayedResponse.status === 200) {
-            const recentData = await recentlyPlayedResponse.json();
-            if (recentData.items && recentData.items.length > 0) {
-                const track = recentData.items[0].track;
-                const playedAt = recentData.items[0].played_at;
-
-                return NextResponse.json({
-                    isPlaying: false,
-                    title: track.name,
-                    artist: track.artists.map((a: { name: string }) => a.name).join(', '),
-                    album: track.album.name,
-                    albumImageUrl: track.album.images[0]?.url,
-                    songUrl: track.external_urls.spotify,
-                    lastPlayedAt: playedAt,
-                });
-            }
-        }
-
-        return NextResponse.json({ isPlaying: false });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ isPlaying: false });
     }
 }
