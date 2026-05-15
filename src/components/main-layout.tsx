@@ -9,7 +9,7 @@ type LayoutProps = {
 
 const MainLayout = ({ children }: LayoutProps) => {
   return (
-    <div className={`mx-auto max-w-[52rem] sm:pt-[2rem] px-6 xs:px-0 pb-52`}>
+    <div className={`mx-auto max-w-[52rem] sm:pt-[2rem] px-6 xs:px-0 pb-8`}>
       <Navigator />
       {children}
       <Footer />

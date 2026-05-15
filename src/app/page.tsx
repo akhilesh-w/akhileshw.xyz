@@ -6,6 +6,7 @@ import Linker from "@/components/linker";
 import NowPlaying from "@/components/NowPlaying";
 import { YearProgress } from "@/components/YearProgress";
 import RecentPosts from "@/components/blog";
+import { Signature } from "@/components/Signature";
 import { siteConfig } from "@/utils/site";
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
+    <>
     <MainLayout>
       <h1 className="sr-only">{siteConfig.name}</h1>
       <div className="mb-6 appear stagger-1">
@@ -61,5 +63,11 @@ export default function Home() {
         </div>
       </section>
     </MainLayout>
+
+    <div className="mx-auto max-w-[52rem] px-6 xs:px-0">
+      <Signature />
+    </div>
+    </>
+
   );
 }
