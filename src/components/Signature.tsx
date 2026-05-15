@@ -1,7 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Penflow = dynamic(() => import('penflow/react').then((m) => m.Penflow), { ssr: false });
 
@@ -11,14 +11,13 @@ const FADE_DURATION_MS = 1800;
 export const Signature = () => {
   const [sigOpacity, setSigOpacity] = useState(1);
   const [quoteOpacity, setQuoteOpacity] = useState(0);
-  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
-
   useEffect(() => {
-    timers.current.push(
-      setTimeout(() => setSigOpacity(0), FADE_DELAY_MS),
-      setTimeout(() => setQuoteOpacity(1), FADE_DELAY_MS + FADE_DURATION_MS)
-    );
-    return () => timers.current.forEach(clearTimeout);
+    const t1 = setTimeout(() => setSigOpacity(0), FADE_DELAY_MS);
+    const t2 = setTimeout(() => setQuoteOpacity(1), FADE_DELAY_MS + FADE_DURATION_MS);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
   }, []);
 
   return (
