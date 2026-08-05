@@ -20,6 +20,13 @@ const Footer = () => (
 
     <div className="flex flex-row items-center text-xs opacity-40 pt-6 gap-3">
       <Clock />
+      <span
+        title="Press ⌘K (or /) to search"
+        aria-hidden="true"
+        className="hidden sm:inline-flex items-center gap-1 font-mono"
+      >
+        <kbd className="px-1.5 py-0.5 rounded border border-current/30 text-[10px] leading-none">⌘K</kbd>
+      </span>
       <a
         title='source code'
         href='https://github.com/akhilesh-w/akhileshw.xyz'
