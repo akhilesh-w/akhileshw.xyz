@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 
 const Penflow = dynamic(() => import('penflow/react').then((m) => m.Penflow), { ssr: false });
 
@@ -9,6 +10,8 @@ const FADE_DELAY_MS = 3800;
 const FADE_DURATION_MS = 1800;
 
 export const Signature = () => {
+  const { resolvedTheme } = useTheme();
+  const color = resolvedTheme === 'dark' ? '#666666' : '#333333';
   const [sigOpacity, setSigOpacity] = useState(1);
   const [quoteOpacity, setQuoteOpacity] = useState(0);
   useEffect(() => {
@@ -32,7 +35,7 @@ export const Signature = () => {
           quality="balanced"
           seed="akhilesh"
           size={52}
-          color="currentColor"
+          color={color}
         />
       </div>
 
