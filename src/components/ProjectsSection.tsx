@@ -29,6 +29,11 @@ const projects = [
     description: 'a goal/task tracking app and chrome extension.',
     link: 'https://github.com/akhilesh-w/epoch',
   },
+  {
+    name: 'os.akhileshw.xyz:',
+    description: 'my portfolio rendered as a 1997 macintosh desktop.',
+    link: 'https://os.akhileshw.xyz',
+  },
 ];
 
 export default function ProjectsSection() {
