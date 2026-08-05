@@ -25,18 +25,11 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: 'en_IN',
     type: 'website',
-    images: [
-      {
-        url: siteConfig.ogImage,
-        alt: siteConfig.name,
-      },
-    ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [siteConfig.ogImage],
   },
   robots: {
     index: true,
