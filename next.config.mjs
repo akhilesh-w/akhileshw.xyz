@@ -9,7 +9,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'lastfm.freetls.fastly.net',
+        hostname: '*.freetls.fastly.net',
       },
     ],
   },
